@@ -1,5 +1,12 @@
 
 
+variable "tf_org" {
+  description = "TF Cloud org name"
+  type        = string
+  default     = "lakegames"
+}
+
+
 variable "lifecycle_name" {
   description = "Lifecycle name"
   type        = string
