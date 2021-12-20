@@ -1,4 +1,10 @@
 
+variable "github_owner" {
+  description = "Github org name"
+  type        = string
+  default     = "theboarderline"
+}
+
 
 variable "tf_org" {
   description = "TF Cloud org name"

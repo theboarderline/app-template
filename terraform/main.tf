@@ -6,7 +6,6 @@ module "app" {
   disabled       = var.disabled
   domain         = var.domain
   repo_name      = var.repo_name
-  admin          = var.admin
 
   gke_project_id = local.gke_project_id
   app_project_id = local.app_project_id
@@ -18,11 +17,11 @@ module "app" {
 
 resource "google_cloudbuild_trigger" "cloudbuild_trigger" {
   project = local.app_project_id
-  name    = "${var.lifecycle_name}-csv-datafeed"
+  name    = "${var.lifecycle_name}-csv-import"
 
   disabled       = var.disabled
   included_files = [
-    "csv_push.yaml",
+    "csv-import.yaml",
     "csv/**",
   ]
 
@@ -35,7 +34,7 @@ resource "google_cloudbuild_trigger" "cloudbuild_trigger" {
     }
   }
 
-  filename = "csv_push.yaml"
+  filename = "csv-push.yaml"
 
   substitutions = {
     _BUCKET       = "${var.lifecycle_name}-${var.repo_name}-private"
