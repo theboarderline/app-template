@@ -9,8 +9,8 @@ variable "github_org" {
   type        = string
 }
 
-variable "repo_name" {
-  description = "Github repo name for this workspace"
+variable "tf_otg" {
+  description = "TF Cloud org name"
   type        = string
 }
 
