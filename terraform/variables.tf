@@ -4,6 +4,16 @@ variable "lifecycle_name" {
   type        = string
 }
 
+variable "github_org" {
+  description = "Github org name"
+  type        = string
+}
+
+variable "repo_name" {
+  description = "Github repo name for this workspace"
+  type        = string
+}
+
 
 variable "repo_name" {
   description = "Github repository name"
