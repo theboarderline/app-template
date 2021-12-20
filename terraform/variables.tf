@@ -1,18 +1,4 @@
 
-variable "github_owner" {
-  description = "Github org name"
-  type        = string
-  default     = "theboarderline"
-}
-
-
-variable "tf_org" {
-  description = "TF Cloud org name"
-  type        = string
-  default     = "lakegames"
-}
-
-
 variable "lifecycle_name" {
   description = "Lifecycle name"
   type        = string
@@ -29,7 +15,6 @@ variable "repo_name" {
 variable "domain" {
   description = "DNS Domain"
   type        = string
-  default     = "sampledomain.com"
 }
 
 
