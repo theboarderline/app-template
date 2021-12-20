@@ -26,7 +26,7 @@ resource "google_cloudbuild_trigger" "cloudbuild_trigger" {
   ]
 
   github {
-    owner = var.github_owner
+    owner = var.github_org
     name  = var.repo_name
 
     push {

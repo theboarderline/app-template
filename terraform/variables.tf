@@ -4,10 +4,12 @@ variable "lifecycle_name" {
   type        = string
 }
 
+
 variable "github_org" {
   description = "Github org name"
   type        = string
 }
+
 
 variable "tf_org" {
   description = "TF Cloud org name"
