@@ -1,7 +1,6 @@
 web-app:
   lifecycle: dev
-  lifecycle_letter: d
   api:
-    tag: bd6390469b04b14370d2c96406278407c9c73161
+    tag: latest
   nginx:
-    tag: bd6390469b04b14370d2c96406278407c9c73161
+    tag: latest

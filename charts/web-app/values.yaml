@@ -1,32 +1,24 @@
 web-app:
   proj_identifier: platform
 
-  namespace: coleman
-  app_code: cgs
+  namespace: samplenamespace
 
   google:
-    domain: colemangroupsolutions.com
+    domain: sampledomain.com
 
   api:
-    label: coleman
+    label: django
 
   secrets:
-    enabled: true
+    enabled: false
 
   django:
     enabled: true
-    email: contact@colemangroupsolutions.com
-    oauth_id: 948837274182-tvkus28ih24pjgg7tuicor51m8sc6dkb.apps.googleusercontent.com
 
   twilio:
-    enabled: true
-    numbers:
-      il: "13128185587"
-      wa: "12062601968"
-
+    enabled: false
 
   sendgrid:
-    enabled: true
-    email: colemangroupsolutions@gmail.com
+    enabled: false
 
 

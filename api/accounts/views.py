@@ -5,7 +5,7 @@ from rest_framework.response import Response
 
 from django.contrib.auth.models import User
 
-from coleman import settings
+from django import settings
 from .models import Profile, Member
 from .serializers import UserSerializer, ProfileSerializer, MemberSerializer
 from api.permissions import (
@@ -98,8 +98,8 @@ class MemberView(viewsets.ModelViewSet):
 
     def create(self, request, *args, **kwargs):
         if Member.objects.filter(owner=request.user.id).exists():
-             content = {"error": "Member account already exists"}
-             return Response(content, status=status.HTTP_409_CONFLICT)
+            content = {"error": "Member account already exists"}
+            return Response(content, status=status.HTTP_409_CONFLICT)
 
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
@@ -139,7 +139,8 @@ class ProfilesView(viewsets.ModelViewSet):
         queryset = self.filter_queryset(self.get_queryset())
 
         if 'username' in request.query_params:
-            owner = User.objects.filter(username=request.query_params['username'])
+            owner = User.objects.filter(
+                username=request.query_params['username'])
             if owner.exists():
                 queryset = queryset.filter(owner=owner[0])
             else:

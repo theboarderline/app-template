@@ -3,7 +3,7 @@ from .gcs import upload_blob
 from accounts.models import Member
 from houses.models import House
 
-from coleman import settings
+from django import settings
 
 
 def export_csv_content(model, filename):
@@ -36,7 +36,6 @@ def sync_sheets(filename):
 
 
 def push_csv_content(filename):
-    upload_blob(settings.GS_STATIC_BUCKET_NAME, f'var/{filename}.csv', f'csv/{filename}.csv')
+    upload_blob(settings.GS_STATIC_BUCKET_NAME,
+                f'var/{filename}.csv', f'csv/{filename}.csv')
     sync_sheets(filename)
-
-

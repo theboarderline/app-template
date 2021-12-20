@@ -8,10 +8,10 @@ def pprint(stuff):
     PrettyPrinter().pprint(stuff)
 
 
-class colemanSimulator:
+class djangoSimulator:
 
     def __init__(self):
-        self.url = 'http://dev.colemangroupsolutions.com/api/'
+        self.url = 'http://dev.djangogroupsolutions.com/api/'
         # self.url = 'http://127.0.0.1:8000/api/'
 
         self.community = 1
@@ -67,6 +67,4 @@ class colemanSimulator:
 
 
 if __name__ == '__main__':
-    colemanSimulator()
-
-
+    djangoSimulator()

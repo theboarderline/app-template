@@ -1,9 +1,8 @@
 <p align="center">
   <a href="" rel="noopener">
- <img width=200px height=200px src="https://storage.googleapis.com/cgs-static/cgs.png" alt="CGS Logo"></a>
 </p>
 
-<h3 align="center">Coleman Group Solutions Web App</h3>
+<h3 align="center">Sample Web App</h3>
 
 <div align="center">
 
@@ -15,8 +14,6 @@
 
 ---
 
-<p align="center"> Coleman Group Solutions web application built to provide my man Silas with a lead generation/management tool to get him rich
-</p>
 
 ## 📝 Table of Contents
 
@@ -57,26 +54,9 @@ python3 manage.py runserver
 # Authenticate with GKE cluster
 ./bin/auth.sh 
 
-# Create storage bucket
-./bin/buckets.sh 
-
 # Ensure env variables are set
 ./bin/check_env.sh
 
-# Create public IPs in GCP
-./bin/buckets.sh 
-
-# Helm script
-./bin/helm.sh install|upgrade|delete dev|stage|prod
-
-# Reset django database
-./bin/reset_db.sh
-
-# Init/get/push/delete secrets to GCP
-./bin/secrets.sh init|get|push|delete
-
-# Create/delete CI/CD triggers
-./bin/triggers.sh create|delete|reset
 ```
 
 ## ⛏️ Built Using <a name = "built_using"></a>
@@ -91,17 +71,18 @@ python3 manage.py runserver
 - [Google Cloud Platform](https://www.cloud.google.com/) - Public Cloud
 
 ## 🚀 CI/CD <a name = "cicd"></a>
-The following branches are connected to [Google Cloud Build](https://console.cloud.google.com/cloud-build/builds?project=lg-v1-app-project) CI/CD pipelines 
+- `ops`
 - `dev`
+- `test`
 - `stage`
-- `master`
+- `main`
 
 ## ✍️ Authors <a name = "authors"></a>
 
 - [@walkerobrien](https://github.com/walkerobrien) 
   - Project Manager
-  - Lead Developer
   - Cloud Architect
+  - Lead Developer
 - [@silascoleman](https://github.com/silascoleman) 
   - Project Manager
 

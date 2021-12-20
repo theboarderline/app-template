@@ -1,6 +1,7 @@
 from allauth.account.adapter import DefaultAccountAdapter
-from coleman import settings
+from django import settings
 from messaging.sendgrid_email import send_intro_email, send_admin_email
+
 
 class CustomAccountAdapter(DefaultAccountAdapter):
     def save_user(self, request, user, form, commit=True):

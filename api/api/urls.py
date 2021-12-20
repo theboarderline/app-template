@@ -1,7 +1,7 @@
 from django.conf.urls.static import static
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from coleman import settings
+from django import settings
 from accounts.views import CurrentUserView, UsersView, ProfilesView, MemberView, import_users_view
 from houses.views import HouseView, PictureView
 from leads.views import DealView, DealTypeView, StateView, QuestionView, TestimonialView
