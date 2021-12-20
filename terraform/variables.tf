@@ -2,7 +2,6 @@
 variable "lifecycle_name" {
   description = "Lifecycle name"
   type        = string
-  default     = ""
 }
 
 
