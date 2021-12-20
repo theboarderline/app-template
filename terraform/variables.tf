@@ -3,12 +3,14 @@
 variable "lifecycle_name" {
   description = "Lifecycle name"
   type        = string
+  default     = ""
 }
 
 
 variable "repo_name" {
   description = "Github repository name"
   type        = string
+  default     = ""
 }
 
 
