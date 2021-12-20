@@ -9,7 +9,7 @@ variable "github_org" {
   type        = string
 }
 
-variable "tf_otg" {
+variable "tf_org" {
   description = "TF Cloud org name"
   type        = string
 }
