@@ -7,7 +7,7 @@ variable "lifecycle_name" {
 
 
 variable "repo_name" {
-  description = "DNS Domain"
+  description = "Github repository name"
   type        = string
 }
 
@@ -15,7 +15,7 @@ variable "repo_name" {
 variable "domain" {
   description = "DNS Domain"
   type        = string
-  default     = "colemangroupsolutions.com"
+  default     = "sampledomain.com"
 }
 
 
