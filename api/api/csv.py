@@ -3,7 +3,7 @@ from .gcs import upload_blob
 from accounts.models import Member
 from houses.models import House
 
-from django import settings
+from server import settings
 
 
 def export_csv_content(model, filename):

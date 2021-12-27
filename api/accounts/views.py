@@ -5,7 +5,7 @@ from rest_framework.response import Response
 
 from django.contrib.auth.models import User
 
-from django import settings
+from server import settings
 from .models import Profile, Member
 from .serializers import UserSerializer, ProfileSerializer, MemberSerializer
 from api.permissions import (

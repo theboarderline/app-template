@@ -1,4 +1,4 @@
-from django import settings
+from server import settings
 from django.conf import settings
 from twilio.rest import Client
 

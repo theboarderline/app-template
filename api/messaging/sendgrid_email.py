@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User
-from django import settings
+from server import settings
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
 from .config import intro_template_id, seller_intro_template_id, buyer_intro_template_id

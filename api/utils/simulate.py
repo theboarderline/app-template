@@ -8,7 +8,7 @@ def pprint(stuff):
     PrettyPrinter().pprint(stuff)
 
 
-class djangoSimulator:
+class serverSimulator:
 
     def __init__(self):
         self.url = 'http://dev.djangogroupsolutions.com/api/'
@@ -67,4 +67,4 @@ class djangoSimulator:
 
 
 if __name__ == '__main__':
-    djangoSimulator()
+    serverSimulator()

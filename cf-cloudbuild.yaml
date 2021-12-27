@@ -1,9 +1,0 @@
-steps:
-  - name: "gcr.io/cloud-builders/gcloud-slim"
-    id: Update-Webhook
-    entrypoint: "bash"
-    args:
-      - "-c"
-      - |
-        gcloud functions deploy db_remi_devops_2 --runtime python39 --trigger-http --source functions/webhook --project ${_CHATBOT_PROJECT_ID}
-

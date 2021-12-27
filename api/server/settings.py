@@ -139,7 +139,7 @@ if LIFECYCLE == 'prod':
         "rest_framework.renderers.JSONRenderer",
     )
 
-WSGI_APPLICATION = "django.wsgi.application"
+WSGI_APPLICATION = "server.wsgi.application"
 
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
@@ -154,7 +154,7 @@ TWILIO_NUMBER_SID = os.environ.get("TWILIO_NUMBER_SID")
 TWILIO_NUMBER_IL = '+' + str(os.environ.get("TWILIO_NUMBER_IL"))
 TWILIO_NUMBER_WA = '+' + str(os.environ.get("TWILIO_NUMBER_WA"))
 
-TWILIO_DEFAULT_CALLERID = "django Group Solutions"
+TWILIO_DEFAULT_CALLERID = "Coleman Group Solutions"
 
 GS_PROJECT_ID = os.environ.get("GKE_PROJECT")
 GS_STATIC_BUCKET_NAME = os.environ.get("STATIC_BUCKET")
@@ -209,7 +209,7 @@ MIDDLEWARE = [
     "django.contrib.redirects.middleware.RedirectFallbackMiddleware",
 ]
 
-ROOT_URLCONF = "django.urls"
+ROOT_URLCONF = "server.urls"
 
 TEMPLATES = [
     {

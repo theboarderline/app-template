@@ -1,5 +1,5 @@
 from allauth.account.adapter import DefaultAccountAdapter
-from django import settings
+from server import settings
 from messaging.sendgrid_email import send_intro_email, send_admin_email
 
 

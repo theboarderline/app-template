@@ -4,7 +4,7 @@ from rest_framework.response import Response
 from rest_framework.renderers import TemplateHTMLRenderer
 from rest_framework.views import APIView
 
-from django import settings
+from server import settings
 
 
 @api_view(["GET"])
