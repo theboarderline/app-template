@@ -5,10 +5,6 @@ import {
   Faq,
   Contact,
   User,
-  Profile,
-  HowWeHelp,
-  WhyWeHelp,
-  Testimonial,
 } from '../pages';
 
 interface PrivateRouteProps {
@@ -57,11 +53,6 @@ const BaseRouter: React.FC<BaseRouterProps> = ({ data }) => (
     <Route path="/contact" component={Contact} />
     <PrivateRoute data={data} path="/user/:username" component={User} />
     <PrivateRoute data={data} path="/account" component={User} />
-    <PrivateRoute data={data} path="/profile" component={Profile} />
-    <Route path="/howwehelp" component={HowWeHelp} />
-    <Route path="/whywehelp" component={WhyWeHelp} />
-    <Route path="/testimonials" component={Testimonial} />
-    {/* <PrivateRoute path="/buyer" component={BuyerSignup} /> */}
   </Switch>
 );
 

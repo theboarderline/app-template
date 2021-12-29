@@ -21,8 +21,6 @@ import Headerflow from './headerflow';
 import SideDrawer from './sidedrawer';
 import TestimonialCard from './testimonial-card';
 import SectionCards from './section-cards';
-import SectionTabs from './section-tabs';
-import SectionPills from './section-pills';
 import NeedToSell from './need-to-sell';
 import WaysCard from './way-cards';
 
@@ -31,8 +29,6 @@ export {
   LoaderComponent as Loader,
   UserList,
   SectionCards,
-  SectionTabs,
-  SectionPills,
   Header,
   Footer,
   SideDrawer,

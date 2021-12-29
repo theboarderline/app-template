@@ -17,7 +17,7 @@ import RegularButton from '../../kit-components/CustomButtons/Button';
 
 import './styles.scss';
 
-const SellerForm: React.FC = () => {
+const MemberForm: React.FC = () => {
   const [email, setEmail] = React.useState('');
   const [firstname, setFirstname] = React.useState('');
   const [lastname, setLastname] = React.useState('');
@@ -32,7 +32,7 @@ const SellerForm: React.FC = () => {
 
   const onSellerSignup = () => {
     if (data?.auth?.user?.isLogin)
-      memberSignup(true, false, phone, address).then(
+      memberSignup(phone, address).then(
         (res3: any) => {
           if (res3?.status === 201)
             console.log('SELLER SIGNUP DONE:', res3);
@@ -52,7 +52,7 @@ const SellerForm: React.FC = () => {
             patchNames(firstname, lastname).then(() => {
               dispatch(socialLogin());
               if (phone || address)
-                memberSignup(true, false, phone, address).then(
+                memberSignup(phone, address).then(
                   (res2: any) => {
                     if (res2?.status === 201) {
                       dispatch(socialLogin());
@@ -87,25 +87,25 @@ const SellerForm: React.FC = () => {
         <GridItem lg={6} >
           <div className="home-form-container-text-data">
             <div className="home-page-form-heading">
-              We Buy Houses
+              Insert Big Text
             </div>
             <div className="home-page-form-heading">
-              Chicago, IL
+              Right Here
             </div>
 
             <p className="home-fee-contatiner-data">
               <span style={{ color: '#fff' }}>
                 <em>
-                  <b>No</b>
-                  <span>Fees</span>
-                  <b>No</b>
-                  <span>Hassles</span>. Put more cash in your pocket
+                  <b>This</b>
+                  <span>is a</span>
+                  <b>SAMPLE</b>
+                  <span>website</span>
                 </em>
               </span>
             </p>
 
             <h3 className="home-pay-heading-container">
-              Get a fair, as-is, cash offer. We pay cash. We pay all the costs.
+              Update to fit your applications needs
             </h3>
 
             <p className="short-form-heading">
@@ -230,7 +230,7 @@ const SellerForm: React.FC = () => {
                     <GridItem lg={12}>
                       <div className="address-form-cash-btn-container">
                         <RegularButton onClick={onSellerSignup} className='how-we-help-get-your-best-btn'>
-                          <div>Get My Fair Cash Offer</div>
+                          <div>Subscribe to text newsletter</div>
                         </RegularButton>
 
                       </div>
@@ -253,4 +253,4 @@ const SellerForm: React.FC = () => {
   );
 };
 
-export default SellerForm;
+export default MemberForm;

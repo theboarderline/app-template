@@ -2,7 +2,7 @@ from django.contrib.auth.models import User
 from server import settings
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
-from .config import intro_template_id, seller_intro_template_id, buyer_intro_template_id
+from .config import intro_template_id
 
 
 def send_email(address, subject, msg, template_id=None):
@@ -37,18 +37,6 @@ def send_admin_email(subject, msg):
 
 
 def send_intro_email(user):
-    subject = 'Welcome to Coleman Group Solutions!'
-    msg = 'Thank you for joining! If you are interested in finding a solution for your property...'
+    subject = 'Welcome!'
+    msg = 'Thank you for joining!'
     send_email(user.email, subject, msg, intro_template_id)
-
-
-def send_seller_lead_email(user):
-    subject = 'Welcome seller!'
-    msg = 'Thank you for joining Coleman Group Solutions'
-    send_email(user.email, subject, msg, seller_intro_template_id)
-
-
-def send_buyer_lead_email(buyer):
-    subject = 'Welcome investor!'
-    msg = 'Thank you for joining Coleman Group Solutions'
-    send_email(buyer.user.email, subject, msg, buyer_intro_template_id)

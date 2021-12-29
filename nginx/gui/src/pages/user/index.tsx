@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { RouteComponentProps, withRouter, useParams } from 'react-router-dom';
 import { Grid, DialogBox } from '../../components';
-import { HouseForm } from '../../forms';
+import { UploadForm } from '../../forms';
 import { getUser } from '../../api';
 import { User } from '../../api/types';
 import './styles.scss';
@@ -39,7 +39,7 @@ const UserPage: React.FC<UserProps & RouteComponentProps> = ({
       <div className="cgs--user-header">
         {/* {user?.id === state.user?.id ? ( */}
         <DialogBox title="Upload House">
-          <HouseForm />
+          <UploadForm />
         </DialogBox>
         {/* ) : null} */}
       </div>

@@ -32,7 +32,4 @@ class Member(models.Model):
     created = models.DateTimeField(default=timezone.now, null=True)
 
     def __str__(self):
-        prefix = 'BUYER:' if self.is_buyer else 'SELLER:'
-        return f'{prefix} {self.owner.username}'
-
-
+        return self.owner.username

@@ -1,7 +1,5 @@
 import {
   getQuestions,
-  getStates,
-  getTestimonials,
   getUser,
 } from './get';
 
@@ -10,17 +8,15 @@ import {
   logout,
   signup,
   memberSignup,
-  uploadHouse,
+  uploadFile,
 } from './post';
 
 export {
   getQuestions,
-  getStates,
-  getTestimonials,
   getUser,
   login,
   logout,
   signup,
   memberSignup,
-  uploadHouse,
+  uploadFile,
 }

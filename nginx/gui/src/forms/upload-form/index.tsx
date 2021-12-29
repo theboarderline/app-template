@@ -2,9 +2,9 @@ import * as React from 'react';
 import { Button } from '@material-ui/core';
 import { Message, Loader, FileField } from '../../components';
 import './styles.scss';
-import { uploadHouse } from '../../api';
+import { uploadFile } from '../../api';
 
-const HouseForm: React.FC = () => {
+const UploadForm: React.FC = () => {
 
   const [error, setError] = React.useState('');
   const [loading, setLoading] = React.useState(false);
@@ -16,7 +16,7 @@ const HouseForm: React.FC = () => {
     if (!file) setError('Please select video file to upload');
     else {
       setError('');
-      uploadHouse(file).then((res: any) => {
+      uploadFile(file).then((res: any) => {
         if (res?.status === 201) {
           setMsg('Successfully posted video');
           setLoading(false);
@@ -28,7 +28,7 @@ const HouseForm: React.FC = () => {
 
   return (
     <div className="cgs-video-form">
-      <FileField label="Upload Video" required setValue={setFile} />
+      <FileField label="Upload File" required setValue={setFile} />
       <Message
         severity={error ? 'error' : 'success'}
         message={error || msg}
@@ -50,4 +50,4 @@ const HouseForm: React.FC = () => {
   );
 };
 
-export default HouseForm;
+export default UploadForm;

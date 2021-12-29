@@ -81,8 +81,6 @@ SITE_ID = 1
 INSTALLED_APPS = [
     "accounts",
     "api",
-    "houses",
-    "leads",
     "messaging",
 
     "django_twilio",
@@ -151,14 +149,12 @@ TWILIO_ACCOUNT_SID = os.environ.get("TWILIO_SID")
 TWILIO_AUTH_TOKEN = os.environ.get("TWILIO_TOKEN")
 TWILIO_NUMBER_SID = os.environ.get("TWILIO_NUMBER_SID")
 
-TWILIO_NUMBER_IL = '+' + str(os.environ.get("TWILIO_NUMBER_IL"))
-TWILIO_NUMBER_WA = '+' + str(os.environ.get("TWILIO_NUMBER_WA"))
+TWILIO_NUMBER = '+' + str(os.environ.get("TWILIO_NUMBER"))
 
-TWILIO_DEFAULT_CALLERID = "Coleman Group Solutions"
+TWILIO_DEFAULT_CALLERID = os.environ.get("TWILIO_CALLER_ID")
 
 GS_PROJECT_ID = os.environ.get("GKE_PROJECT")
 GS_STATIC_BUCKET_NAME = os.environ.get("STATIC_BUCKET")
-GS_BUCKET_NAME = os.environ.get("STATIC_BUCKET")
 PRIVATE_BUCKET_NAME = os.environ.get("PRIVATE_BUCKET")
 
 if USE_GCS:

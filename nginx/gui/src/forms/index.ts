@@ -1,4 +1,4 @@
-import HouseForm from './house-form';
-import SellerForm from './seller-form';
+import UploadForm from './upload-form';
+import MemberForm from './member-form';
 
-export { SellerForm, HouseForm };
+export { UploadForm, MemberForm };

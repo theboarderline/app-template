@@ -1,5 +1,4 @@
 from allauth.account.adapter import DefaultAccountAdapter
-from server import settings
 from messaging.sendgrid_email import send_intro_email, send_admin_email
 
 
@@ -13,7 +12,7 @@ class CustomAccountAdapter(DefaultAccountAdapter):
         send_intro_email(user)
 
         subject = 'NEW USER !!!'
-        msg = f'CGS has a new user: {user.email}'
+        msg = f'You have a new user: {user.email}'
         send_admin_email(subject, msg)
 
         return ret_val

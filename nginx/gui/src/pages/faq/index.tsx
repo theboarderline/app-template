@@ -9,13 +9,12 @@ import {
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { Grid } from '../../components';
 import { Question, State } from '../../api/types';
-import { getQuestions, getStates } from '../../api';
+import { getQuestions } from '../../api';
 import './styles.scss';
 import { datAosOnce, fadeDown, fadeRight, fadeUp, fadeZoomOut } from '../../utils/animationsName';
 
 const Faq: React.FC<RouteComponentProps> = () => {
 
-  const [states, setStates] = React.useState<State[]>([]);
   const [questions, setQuestions] = React.useState<Question[]>([]);
   const [expanded, setExpanded] = React.useState<string | false>('1');
 
@@ -30,11 +29,6 @@ const Faq: React.FC<RouteComponentProps> = () => {
     getQuestions()
       .then((data: Question[]) => {
         setQuestions(data);
-      })
-
-    getStates()
-      .then((data: State[]) => {
-        setStates(data);
       })
   }, []);
 

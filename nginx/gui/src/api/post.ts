@@ -41,14 +41,10 @@ export const login = async (email: string, password: string): Promise<void> => {
 
 
 export const memberSignup = async (
-  isSeller: boolean,
-  isBuyer: boolean,
   phone: string,
   address: string
 ): Promise<void> => {
   const formData = new FormData();
-  formData.append('is_seller', String(isSeller));
-  formData.append('is_buyer', String(isBuyer));
   formData.append('phone', phone);
   formData.append('address', address);
 
@@ -61,22 +57,6 @@ export const memberSignup = async (
     });
 };
 
-
-export const uploadHouse = async (file: File | undefined): Promise<void> => {
-  const formData = new FormData();
-  formData.append('filename', file || '');
-
-  return postData('houses/', formData)
-    .then((res) => {
-      if (res?.status !== 201) {
-        console.log('POST HOUSE ERROR:', res);
-      }
-      return res;
-    })
-    .catch((error) => {
-      console.log('UPLOAD HOUSES ERROR:', error);
-    });
-};
 
 export const uploadProfile = async (file: File | undefined): Promise<void> => {
   const formData = new FormData();
@@ -94,3 +74,19 @@ export const uploadProfile = async (file: File | undefined): Promise<void> => {
     });
 };
 
+
+export const uploadFile = async (file: File | undefined): Promise<void> => {
+  const formData = new FormData();
+  formData.append('filename', file || '');
+
+  return postData('photos/', formData)
+    .then((res) => {
+      if (res?.status !== 201) {
+        console.log('POST FILE ERROR:', res);
+      }
+      return res;
+    })
+    .catch((error) => {
+      console.log('UPLOAD FILE ERROR:', error);
+    });
+};

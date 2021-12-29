@@ -3,7 +3,6 @@ from rest_framework import serializers
 from .models import Profile, Member
 
 
-
 class UserSerializer(serializers.ModelSerializer):
     member_data = serializers.SerializerMethodField()
     profile_data = serializers.SerializerMethodField()
@@ -49,15 +48,12 @@ class MemberSerializer(serializers.ModelSerializer):
             'phone',
             'city',
             'state',
-            'is_buyer',
-            'is_seller',
             'created',
         ]
         read_only_fields = [
             'owner',
             'created',
         ]
-
 
 
 class ProfileSerializer(serializers.ModelSerializer):

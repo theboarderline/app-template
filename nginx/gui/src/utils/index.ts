@@ -23,7 +23,7 @@ export const STATIC_BUCKET = check(window.STATIC_BUCKET)
 
 export const GOOGLE_NUMBER = check(window.GOOGLE_NUMBER)
   ? window.GOOGLE_NUMBER
-  : '(309) 220-8422';
+  : '(123) 456-7890';
 
 export const getError = (data: any): string => {
   console.log('GETTING ERROR MSG:', data);

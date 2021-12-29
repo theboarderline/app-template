@@ -15,32 +15,13 @@ from api.permissions import (
 from api.gcs import download_blob
 
 from messaging.twilio_helper import (
-    send_seller_text,
-    send_buyer_text,
+    send_intro_text,
     is_valid_number,
 )
 
 from messaging.sendgrid_email import (
-    send_seller_lead_email,
-    send_buyer_lead_email,
+    send_intro_email,
 )
-
-
-@api_view(["POST"])
-def import_users_view(request):
-
-    if 'filename' not in request.data:
-        return Response('No filename given', status=status.HTTP_204_NO_CONTENT)
-
-    filename = request.data['filename']
-    destination = f'var/import.csv'
-    download_blob(settings.PRIVATE_BUCKET_NAME, filename, destination)
-
-    with open(destination) as file:
-        for line in file:
-            print(f'LINE: {line}')
-
-    return Response('Users successfully imported', status=status.HTTP_201_CREATED)
 
 
 class CurrentUserView(viewsets.ModelViewSet):
@@ -109,12 +90,8 @@ class MemberView(viewsets.ModelViewSet):
         data = serializer.validated_data
 
         if is_valid_number(data['phone']):
-            if data['is_seller']:
-                send_seller_text(data)
-                send_seller_lead_email(request.user)
-            elif data['is_buyer']:
-                send_buyer_text(data)
-                send_buyer_lead_email(request.user)
+            send_intro_text(data)
+            send_intro_email(request.user)
 
         headers = self.get_success_headers(serializer.data)
         return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)

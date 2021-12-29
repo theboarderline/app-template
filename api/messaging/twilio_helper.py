@@ -2,7 +2,7 @@ from server import settings
 from django.conf import settings
 from twilio.rest import Client
 
-from .text_messages import buyer_intro_text, seller_intro_text, non_web_text
+from .text_messages import intro_text
 
 
 def clean_number(phone_number):
@@ -25,11 +25,6 @@ def send_text(number, twilio_number, msg):
     )
 
 
-def send_seller_text(member):
-    send_text(member['phone'], settings.TWILIO_NUMBER_IL,
-              seller_intro_text(member['owner'].first_name, 'a house'))
-
-
-def send_buyer_text(member):
-    send_text(member['phone'], settings.TWILIO_NUMBER_IL,
-              buyer_intro_text(member['user'].first_name, 'a house'))
+def send_intro_text(member):
+    send_text(member['phone'], settings.TWILIO_NUMBER,
+              intro_text(member['user'].first_name))
