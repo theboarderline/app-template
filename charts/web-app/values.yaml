@@ -1,14 +1,4 @@
 web-app:
-  proj_identifier: platform
-
-  namespace: samplenamespace
-
-  google:
-    domain: sampledomain.com
-
-  api:
-    label: django
-
   secrets:
     enabled: false
 
