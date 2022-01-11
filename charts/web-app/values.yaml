@@ -1,4 +1,9 @@
 web-app:
+  namespace: ""
+
+  google:
+    domain: ""
+  
   secrets:
     enabled: false
 

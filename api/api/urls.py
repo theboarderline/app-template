@@ -2,7 +2,7 @@ from django.conf.urls.static import static
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from server import settings
-from accounts.views import CurrentUserView, UsersView, ProfilesView, MemberView, import_users_view
+from accounts.views import CurrentUserView, UsersView, ProfilesView, MemberView
 
 
 router = DefaultRouter()
