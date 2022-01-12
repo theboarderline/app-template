@@ -1,4 +1,4 @@
 
 lifecycle_name = "ops"
 
-disabled = false
+disabled = true
