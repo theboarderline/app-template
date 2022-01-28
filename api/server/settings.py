@@ -157,7 +157,7 @@ GS_PROJECT_ID = os.environ.get("GKE_PROJECT")
 GS_STATIC_BUCKET_NAME = os.environ.get("STATIC_BUCKET")
 PRIVATE_BUCKET_NAME = os.environ.get("PRIVATE_BUCKET")
 
-if USE_GCS:
+if USE_GCS == "true":
     DEFAULT_FILE_STORAGE = "storages.backends.gcloud.GoogleCloudStorage"
     STATICFILES_STORAGE = "storages.backends.gcloud.GoogleCloudStorage"
     GS_DEFAULT_ACL = "publicRead"
