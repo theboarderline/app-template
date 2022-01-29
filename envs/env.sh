@@ -1,5 +1,4 @@
 
-source ./envs/gcp.sh
 source ./envs/app.sh
 
 export LIFECYCLE_LETTER="${LIFECYCLE:0:1}"
@@ -24,8 +23,6 @@ if [[ $FAILOVER ]]; then
 fi
 
 export IS_LOCAL=True
-
-gcloud config set account $GCP_EMAIL
 
 ./bin/auth.sh
 
