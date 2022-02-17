@@ -5,9 +5,16 @@ API_TAG ?= latest
 NGINX_TAG ?= latest
 
 
-all: dep install
+all: connect dep install
+init: cluster connect dep
+
 clean: delete
 
+cluster:
+	vcluster create vcluster-${NAMESPACE} -n host-${NAMESPACE} --expose
+
+connect:
+	vcluster connect vcluster-${NAMESPACE} -n host-${NAMESPACE}
 
 dep:
 	helm dep update ${CHART}
