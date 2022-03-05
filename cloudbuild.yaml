@@ -34,7 +34,7 @@ steps:
       - "-c"
       - |
         if [[ ${_USE_HELM} ]]; then
-          make all NAMESPACE=${_APP_CODE} LIFECYCLE=${_LIFECYCLE} API_TAG=$COMMIT_SHA  NGINX_TAG=$COMMIT_SHA 
+          make all NAMESPACE=${_APP_CODE} LIFECYCLE=${_LIFECYCLE} API_TAG=$COMMIT_SHA NGINX_TAG=$COMMIT_SHA DOMAIN=${_DOMAIN}
         fi
     env:
       - "CLOUDSDK_COMPUTE_ZONE=${_ZONE}"
