@@ -5,4 +5,4 @@ web-app:
   nginx:
     tag: latest
   db:
-    proxy: true
+    proxy: false
