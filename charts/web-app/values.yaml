@@ -1,6 +1,4 @@
 web-app:
-  namespace: ""
-
   google:
     domain: ""
   
