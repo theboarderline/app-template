@@ -1,6 +1,5 @@
 
 export NAMESPACE=''
-export DOMAIN=''
 
 
 
