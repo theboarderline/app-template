@@ -9,7 +9,7 @@ RUN yarn build
 
 
 # Use custom nginx image with built-in configs to serve compiled React app
-FROM gcr.io/walker-cpl/nginx-react:0.0.3
+FROM gcr.io/walker-cpl/nginx-react:0.0.8
 
 COPY --from=build /react/build/ /var/www/html/
 
