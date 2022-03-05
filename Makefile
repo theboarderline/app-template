@@ -14,20 +14,20 @@ dep:
 
 
 install:
-	helm upgrade -i ${NAMESPACE} ${CHART} -f ${CHART}/values/${LIFECYCLE}.yaml -n ${NAMESPACE} --create-namespace --set web-app.api.tag=${API_TAG} --set web-app.nginx.tag=${NGINX_TAG} 
+	helm upgrade -i ${NAMESPACE} ${CHART} -f ${CHART}/values/${LIFECYCLE}.yaml -n ${NAMESPACE} --create-namespace --set web-app.api.tag=${API_TAG} --set web-app.nginx.tag=${NGINX_TAG} --set web-app.domain=${DOMAIN}
 
 
 local:
 	kubectl config use-context rancher-desktop || exit 1
-	helm upgrade -i ${NAMESPACE} ${CHART} -f ${CHART}/values/${LIFECYCLE}.yaml -n ${NAMESPACE} --create-namespace --set web-app.local=true --set web-app.secrets.enabled=false --set web-app.api.tag=${API_TAG} --set web-app.nginx.tag=${NGINX_TAG}
+	helm upgrade -i ${NAMESPACE} ${CHART} -f ${CHART}/values/${LIFECYCLE}.yaml -n ${NAMESPACE} --create-namespace --set web-app.local=true --set web-app.secrets.enabled=false --set web-app.api.tag=${API_TAG} --set web-app.nginx.tag=${NGINX_TAG} --set web-app.domain=${DOMAIN}
 
 
 dry:
-	helm template ${NAMESPACE} ${CHART} -f ${CHART}/values/${LIFECYCLE}.yaml --set web-app.api.tag=${API_TAG} --set web-app.nginx.tag=${NGINX_TAG}
+	helm template ${NAMESPACE} ${CHART} -f ${CHART}/values/${LIFECYCLE}.yaml --set web-app.api.tag=${API_TAG} --set web-app.nginx.tag=${NGINX_TAG} --set web-app.domain=${DOMAIN}
 
 
 dry-local:
-	helm template ${NAMESPACE} ${CHART} -f ${CHART}/values/${LIFECYCLE}.yaml --set web-app.local=true --set web-app.secrets.enabled=false --set web-app.api.tag=${API_TAG} --set web-app.nginx.tag=${NGINX_TAG}
+	helm template ${NAMESPACE} ${CHART} -f ${CHART}/values/${LIFECYCLE}.yaml --set web-app.local=true --set web-app.secrets.enabled=false --set web-app.api.tag=${API_TAG} --set web-app.nginx.tag=${NGINX_TAG} --set web-app.domain=${DOMAIN}
 
 
 delete:
