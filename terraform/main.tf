@@ -8,6 +8,7 @@ module "app" {
   repo_name      = var.repo_name
 
   gke_project_id = local.gke_project_id
+  db_project_id  = local.db_project_id
   app_project_id = local.app_project_id
   dns_zone_name  = local.dns_zone_name
 

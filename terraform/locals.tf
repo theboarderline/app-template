@@ -1,6 +1,8 @@
 locals {
 
-  gke_project_id = data.terraform_remote_state.folders.outputs.platform_gke_project_id
+  # gke_project_id = data.terraform_remote_state.folders.outputs.platform_gke_project_id
+  gke_project_id = "p-platform-gke-project"
+  db_project_id  = "p-platform-db-project"
 
   app_folder     = data.terraform_remote_state.app_projects.outputs.application_folders[var.repo_name]
   app_project_id = local.app_folder["projects_map"]["app"]["project_id"]
