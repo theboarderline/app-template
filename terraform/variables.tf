@@ -43,3 +43,22 @@ variable "use_helm" {
 }
 
 
+variable "gcp_project_id" {
+  description = "GCP project ID"
+  type        = string
+  default     = ""
+}
+
+
+variable "gke_project_id" {
+  description = "GCP GKE project ID"
+  type        = string
+  default     = ""
+}
+
+
+variable "db_project_id" {
+  description = "GCP database project ID"
+  type        = string
+  default     = ""
+}

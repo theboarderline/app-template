@@ -7,9 +7,9 @@ module "app" {
   domain         = var.domain
   repo_name      = var.repo_name
 
-  gke_project_id = local.gke_project_id
-  db_project_id  = local.db_project_id
-  app_project_id = local.app_project_id
+  gke_project_id = var.gke_project_id
+  db_project_id  = var.db_project_id
+  app_project_id = var.gcp_project_id
   dns_zone_name  = local.dns_zone_name
 
   use_helm = var.use_helm
