@@ -27,7 +27,7 @@
 
 Run frontend server
 ```
-cd nginx/gui
+cd react
 yarn install
 yarn start
 ```
