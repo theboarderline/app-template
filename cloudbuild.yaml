@@ -32,8 +32,8 @@ steps:
       - "-c"
       - |
         helm dep update ./charts/web-app
-        helm template ${_NAMESPACE} ./charts/web-app -f ./charts/web-app/values/${_LIFECYCLE}.yaml -n ${_NAMESPACE} --set web-app.api.tag=$COMMIT_SHA --set web-app.nginx.tag=$COMMIT_SHA --set web-app.db_project_id=${_DB_PROJECT} --set web-app.app_code=${_APP_CODE} --set web-app.google.domain=${_DOMAIN} --set google.registry=${_IMAGE_REPO_NAME} --set ip_name=${_IP_NAME} --set clean_data_bucket=${_CLEAN_DATA_BUCKET_NAME} --set ingest_bucket=${_INGEST_BUCKET_NAME}
-        helm upgrade -i ${_NAMESPACE} ./charts/web-app -f ./charts/web-app/values/${_LIFECYCLE}.yaml -n ${_NAMESPACE} --create-namespace --set web-app.api.tag=$COMMIT_SHA --set web-app.nginx.tag=$COMMIT_SHA --set web-app.db_project_id=${_DB_PROJECT} --set web-app.app_code=${_APP_CODE} --set web-app.google.domain=${_DOMAIN} --set google.registry=${_IMAGE_REPO_NAME} --set ip_name=${_IP_NAME} --set clean_data_bucket=${_CLEAN_DATA_BUCKET_NAME} --set ingest_bucket=${_INGEST_BUCKET_NAME}
+        helm template ${_NAMESPACE} ./charts/web-app -f ./charts/web-app/values/${_LIFECYCLE}.yaml -n ${_NAMESPACE} --set web-app.api.tag=$COMMIT_SHA --set web-app.nginx.tag=$COMMIT_SHA --set web-app.db_project_id=${_DB_PROJECT} --set web-app.app_code=${_APP_CODE} --set web-app.domain=${_DOMAIN} --set google.registry=${_IMAGE_REPO_NAME} --set ip_name=${_IP_NAME} --set clean_data_bucket=${_CLEAN_DATA_BUCKET_NAME} --set ingest_bucket=${_INGEST_BUCKET_NAME}
+        helm upgrade -i ${_NAMESPACE} ./charts/web-app -f ./charts/web-app/values/${_LIFECYCLE}.yaml -n ${_NAMESPACE} --create-namespace --set web-app.api.tag=$COMMIT_SHA --set web-app.nginx.tag=$COMMIT_SHA --set web-app.db_project_id=${_DB_PROJECT} --set web-app.app_code=${_APP_CODE} --set web-app.domain=${_DOMAIN} --set google.registry=${_IMAGE_REPO_NAME} --set ip_name=${_IP_NAME} --set clean_data_bucket=${_CLEAN_DATA_BUCKET_NAME} --set ingest_bucket=${_INGEST_BUCKET_NAME}
     env:
       - "CLOUDSDK_COMPUTE_ZONE=${_ZONE}"
       - "CLOUDSDK_CONTAINER_CLUSTER=${_CLUSTER}"
