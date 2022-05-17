@@ -1,22 +1,22 @@
-import {
-  getQuestions,
-  getUser,
-} from './get';
+import { api } from './axios';
+import { fixURI } from '../utils';
 
-import {
-  login,
-  logout,
-  signup,
-  memberSignup,
-  uploadFile,
-} from './post';
+const calculatePayout = (players: string): Promise<any> => {
 
-export {
-  getQuestions,
-  getUser,
-  login,
-  logout,
-  signup,
-  memberSignup,
-  uploadFile,
-}
+  const lines = players.split(/\r?\n/).filter(Boolean);
+
+  return api()
+    .post(fixURI('payout'), {'input': lines.join(';')})
+    .then((response) => {
+      if (response?.status === 201 || response?.status === 200) {
+        console.log('Success:', response)
+        return response;
+      }
+      throw Error(response?.statusText);
+    })
+    .catch(({ response }) => {
+      return response;
+    });
+};
+
+export default calculatePayout;

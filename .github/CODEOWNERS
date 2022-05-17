@@ -1,0 +1,35 @@
+
+# Admin
+* @walkerobrien
+
+
+# Documentation
+*.md          @walkerobrien
+
+
+# Shell scripting
+*.sh          @walkerobrien
+
+
+# CICD and Kubernetes configs
+*.yaml        @walkerobrien
+**/Dockerfile @walkerobrien
+
+
+# API src code
+*.py @walkerobrien
+*.go @walkerobrien
+
+/api @walkerobrien
+
+
+# Frontend src code
+*.scss @meredithkeesling @walkerobrien
+*.ts   @meredithkeesling @walkerobrien
+*.js   @meredithkeesling @walkerobrien
+
+/react @walkerobrien @meredithkeesling
+
+
+
+

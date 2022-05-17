@@ -1,9 +1,9 @@
 @import '../../style/abstracts/_abstracts-dir';
 
-.cgs-file-field {
+.lg-file-field {
   position: relative;
 
-  .cgs-file-field--text-hidden {
+  .lg-file-field--text-hidden {
     opacity: 0;
     z-index: 2;
     position: absolute;
@@ -15,18 +15,18 @@
     }
   }
 
-  .cgs-file-field--text {
+  .lg-file-field--text {
     width: 100%;
     
-    .cgs-file-field--label {
+    .lg-file-field--label {
       @include setFont($font-size--md, $font-weight--regular);
     }
-    .cgs-file-field--outlined {
-      .cgs-file-field--input {
+    .lg-file-field--outlined {
+      .lg-file-field--input {
         @include setFont($font-size--md, $font-weight--regular);
       }
 
-      .cgs-file-field--notched {
+      .lg-file-field--notched {
 
       }
     }

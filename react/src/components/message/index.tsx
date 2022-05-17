@@ -10,10 +10,10 @@ interface MessageProps {
 const Message: React.FC<MessageProps> = ({ message, severity = 'info' }) => {
   return message ? (
     <Alert
-      className="cgs-message"
+      className='lg-message'
       severity={severity}
       classes={{
-        message: 'cgs-message--text'
+        message: 'lg-message--text',
       }}
     >
       {message}

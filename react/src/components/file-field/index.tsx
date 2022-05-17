@@ -12,16 +12,16 @@ interface FileFieldProps {
 const FileFieldComponent: React.FC<FileFieldProps> = ({
   label,
   required,
-  setValue
+  setValue,
 }) => {
   const [fileName, setFileName] = React.useState('');
 
   return (
-    <div className="cgs-file-field">
+    <div className='lg-file-field'>
       <TextField
-        className="cgs-file-field--text-hidden"
-        type="file"
-        variant="outlined"
+        className='lg-file-field--text-hidden'
+        type='file'
+        variant='outlined'
         onChange={(e: any) => {
           if (e.target?.files?.length) {
             const file = e.target.files[0];
@@ -33,9 +33,9 @@ const FileFieldComponent: React.FC<FileFieldProps> = ({
 
       <TextField
         value={fileName}
-        aria-describedby="file"
-        className="cgs-file-field--text"
-        variant="outlined"
+        aria-describedby='file'
+        className='lg-file-field--text'
+        variant='outlined'
         label={label}
         required={required}
         onChange={(e: any) => {
@@ -46,17 +46,17 @@ const FileFieldComponent: React.FC<FileFieldProps> = ({
           }
         }}
         inputProps={{
-          className: 'cgs-file-field--input'
+          className: 'lg-file-field--input',
         }}
         InputProps={{
-          className: 'cgs-file-field--outlined',
+          className: 'lg-file-field--outlined',
           classes: {
-            notchedOutline: 'cgs-file-field--notched'
+            notchedOutline: 'lg-file-field--notched',
           },
-          endAdornment: <PublishRounded />
+          endAdornment: <PublishRounded />,
         }}
         InputLabelProps={{
-          className: 'cgs-file-field--label'
+          className: 'lg-file-field--label',
         }}
       />
     </div>

@@ -4,7 +4,7 @@ import { AppBar, Toolbar } from '@material-ui/core';
 import { InputForm } from '../../forms';
 import './styles.scss';
 
-const Home: React.FC<RouteComponentProps> = () => {
+const Login: React.FC<RouteComponentProps> = () => {
 
   return (
     <div className='lg-home'>
@@ -13,4 +13,4 @@ const Home: React.FC<RouteComponentProps> = () => {
   );
 };
 
-export default withRouter(Home);
+export default withRouter(Login);

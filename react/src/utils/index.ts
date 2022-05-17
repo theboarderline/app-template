@@ -1,5 +1,4 @@
 export const check = (query?: string | number | null): boolean =>
-
   query !== null &&
   query !== undefined &&
   query !== -1 &&
@@ -9,21 +8,13 @@ export const check = (query?: string | number | null): boolean =>
   query !== 'null' &&
   query !== '';
 
-export const LIFECYCLE = check(window.LIFECYCLE)
-  ? window.LIFECYCLE
-  : 'local';
-
 export const CURRENT_URL = check(window.API_URL)
   ? window.API_URL
   : 'http://localhost:8000/';
 
 export const STATIC_BUCKET = check(window.STATIC_BUCKET)
   ? window.STATIC_BUCKET
-  : 'dev-coleman-web-static';
-
-export const GOOGLE_NUMBER = check(window.GOOGLE_NUMBER)
-  ? window.GOOGLE_NUMBER
-  : '(123) 456-7890';
+  : 'dev-tp2-web-static';
 
 export const getError = (data: any): string => {
   console.log('GETTING ERROR MSG:', data);
@@ -34,7 +25,8 @@ export const getError = (data: any): string => {
   if (data?.error) return data.error;
   if (data?.detail) return data.detail;
   if (data?.new_password2) return data.new_password2;
-  if (data?.email) return data.email;
+  if (data?.sport) return data.sport;
+  if (data?.community) return data.community;
 
   return JSON.stringify(data);
 };
@@ -44,5 +36,11 @@ export const fixURI = (url: string): string => {
   if (!url.includes('localhost')) ret = url.replace('http', 'https');
   return encodeURI(ret);
 };
+
+export const isJudge = (state: {
+  isJudge: boolean;
+  originalComm: string;
+  community: string;
+}): boolean => state.isJudge === true && state.originalComm === state.community;
 
 export const gcsBucket = `https://storage.googleapis.com/${STATIC_BUCKET}`;

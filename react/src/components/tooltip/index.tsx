@@ -12,8 +12,8 @@ const TooltipComponent: React.FC<TooltipProps> = ({ children, title = '' }) => {
       title={title}
       arrow
       classes={{
-        popper: 'cgs--popper',
-        tooltip: 'cgs--tooltip'
+        popper: 'lake-games--popper',
+        tooltip: 'lake-games--tooltip',
       }}
     >
       <span>{children}</span>

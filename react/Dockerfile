@@ -14,3 +14,4 @@ FROM gcr.io/walker-cpl/nginx-react:0.0.8
 COPY --from=build /react/build/ /var/www/html/
 
 
+

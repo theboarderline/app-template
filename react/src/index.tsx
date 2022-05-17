@@ -1,13 +1,8 @@
-/* eslint-disable */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { Provider } from 'react-redux';
-import MainStore from './store/configureStore';
-import "../node_modules/slick-carousel/slick/slick.css";
-import "../node_modules/slick-carousel/slick/slick-theme.css";
 
 const composeProviders = (...Providers: any[]) => (Child: any) => (
   props: any
@@ -19,17 +14,10 @@ const composeProviders = (...Providers: any[]) => (Child: any) => (
 
 const WrappedApp = composeProviders(Router)(App);
 
-// const store: Store<ISLoadingState, ISLoadingAction> & {
-//   dispatch: DispatchType
-// } = createStore(reducer, applyMiddleware(thunk))
-
 ReactDOM.render(
-  // <React.StrictMode>
-  <Provider store={MainStore}>
+  <React.StrictMode>
     <WrappedApp />
-  </Provider>,
-
-  // </React.StrictMode>,
+  </React.StrictMode>,
   document.getElementById('root')
 );
 

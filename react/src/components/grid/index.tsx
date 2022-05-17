@@ -3,7 +3,7 @@ import {
   GridList,
   GridListTile,
   withWidth,
-  isWidthUp
+  isWidthUp,
 } from '@material-ui/core';
 import './styles.scss';
 
@@ -50,13 +50,13 @@ const Grid: React.FC<GridProps> = ({ width, items }) => {
   };
 
   return (
-    <GridList cols={12} style={{ margin: 0 }} className="cgs--grid" cellHeight="auto">
+    <GridList cols={12} className='lake-games--grid' cellHeight='auto'>
       {items.map(({ cols, rows, id, content }) => (
         <GridListTile
           cols={getGridListCols(cols)}
           rows={rows}
           key={id}
-          className="cgs--grid-tile"
+          className='lake-games--grid-tile'
         >
           {content}
         </GridListTile>

@@ -1,7 +1,10 @@
 @import '../../style/abstracts/_abstracts-dir';
 
-.cgs--grid {
+.lake-games--grid {
   justify-content: center;
   height: 100%;
   align-items: center;
+
+  .lake-games--grid-tile {
+  }
 }

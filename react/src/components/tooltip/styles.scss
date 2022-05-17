@@ -1,7 +1,7 @@
 @import '../../style/abstracts/_abstracts-dir';
 
-.cgs--popper {
-  .cgs--tooltip {
+.lake-games--popper {
+  .lake-games--tooltip {
     @include setFont($font-size--md, $font-weight--regular);
   }
 }

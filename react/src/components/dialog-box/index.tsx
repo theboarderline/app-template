@@ -20,9 +20,9 @@ const DialogBox: React.FC<DialogProps> = ({ title, children }) => {
   return (
     <>
       <Button
-        className="dialog-box--btn"
-        variant="outlined"
-        color="primary"
+        className='dialog-box--btn'
+        variant='outlined'
+        color='primary'
         onClick={handleClickOpen}
         classes={{ label: 'dialog-box--btn-label' }}
       >
@@ -31,19 +31,19 @@ const DialogBox: React.FC<DialogProps> = ({ title, children }) => {
 
       <Dialog
         onClose={handleClose}
-        className="dialog-box"
-        aria-labelledby="simple-dialog-title"
+        className='dialog-box'
+        aria-labelledby='simple-dialog-title'
         open={open}
         fullWidth
       >
         <DialogTitle
           disableTypography
-          className="dialog-box--title"
-          id="simple-dialog-title"
+          className='dialog-box--title'
+          id='simple-dialog-title'
         >
           {title}
         </DialogTitle>
-        <DialogContent className="dialog-box--content">
+        <DialogContent className='dialog-box--content'>
           {children}
         </DialogContent>
       </Dialog>

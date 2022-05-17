@@ -1,17 +1,6 @@
 web-app:
-  google:
-    domain: ""
+  app_code: ""
+  domain: ""
   
-  secrets:
-    enabled: false
-
-  django:
-    enabled: true
-
-  twilio:
-    enabled: false
-
-  sendgrid:
-    enabled: false
 
 

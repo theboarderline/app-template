@@ -17,40 +17,40 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
   title,
   value,
   values,
-  setValue
+  setValue,
 }) => {
   const handleChange = (event: React.ChangeEvent<ChangeProps>) => {
     setValue(event.target.value);
   };
 
   return (
-    <FormControl className="cgs-dropdown" variant="outlined">
-      <InputLabel className="cgs-dropdown--label" id="dropdown-label">
+    <FormControl className='lg-dropdown' variant='outlined'>
+      <InputLabel className='lg-dropdown--label' id='dropdown-label'>
         {title}
       </InputLabel>
 
       <Select
-        labelId="dropdown-label"
-        id="dropdown"
+        labelId='dropdown-label'
+        id='dropdown'
         value={value}
         onChange={handleChange}
         label={title}
         classes={{
-          outlined: 'cgs-dropdown--outlined'
+          outlined: 'lg-dropdown--outlined',
         }}
         MenuProps={{
-          className: 'cgs-dropdown--menu',
+          className: 'lg-dropdown--menu',
           classes: {
-            paper: 'cgs-dropdown--paper',
-            list: 'cgs-dropdown--list'
-          }
+            paper: 'lg-dropdown--paper',
+            list: 'lg-dropdown--list',
+          },
         }}
       >
-        <MenuItem key={-1} value="" className="cgs-dropdown--item">
+        <MenuItem key={-1} value='' className='lg-dropdown--item'>
           All
         </MenuItem>
         {values?.map((val) => (
-          <MenuItem key={val.id} value={val} className="cgs-dropdown--item">
+          <MenuItem key={val.id} value={val} className='lg-dropdown--item'>
             {val.name}
           </MenuItem>
         ))}

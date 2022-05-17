@@ -51,11 +51,15 @@ python3 manage.py runserver
 ## 🎈 Script Usage <a name="usage"></a>
 
 ```
-# Authenticate with GKE cluster
-./bin/auth.sh 
+# Initialize environment variables
+source ./envs/<LIFECYCLE>.sh
 
 # Ensure env variables are set
 ./bin/check_env.sh
+
+
+# Authenticate with GKE cluster
+./bin/auth.sh 
 
 ```
 
@@ -63,14 +67,18 @@ python3 manage.py runserver
 
 - [Django Rest Framework](https://www.django-rest-framework.org/) - Python Rest API framework
 - [ReactJS](https://reactjs.org/) - Typescript Frontend library
-- [Cloud SQL](https://https://cloud.google.com/sql) - Google Managed Database
 - [Docker](https://www.docker.com/) - Build Container Images
-- [Kubernetes](https://kubernetes.io/) - Cloud Environment
-- [Helm](https://helm..sh/) - Kubernetes Deployment
-- [Terraform](https://terraform.io/) - Cloud IAC -> repo found [here](https://github.com/theboarderline/gke-infra.git/)
-- [Google Cloud Platform](https://www.cloud.google.com/) - Public Cloud
+- [Kubernetes](https://kubernetes.io/) - Container Orchestration
+- [Helm](https://helm..sh/) - Kubernetes Deployment Manager
+- [Google Cloud Platform](https://www.cloud.google.com/) - Public Cloud Platform
+- [Cloud SQL](https://https://cloud.google.com/sql) - Google Managed Database
+## TODO: update link below with app code and delete comment
+- [Terraform](https://terraform.io/) - Cloud IAC -> repo found [here](https://github.com/theboarderline/<APP_CODE>-iac.git/)
+
 
 ## 🚀 CI/CD <a name = "cicd"></a>
+## TODO: update link below with app code and delete comment
+The following branches have Cloud Build Triggers [found here](https://console.cloud.google.com/cloud-build/builds?project=<APP_CODE>-app-project&supportedpurview=project) that will build and deploy images on a push
 - `ops`
 - `dev`
 - `test`
@@ -83,34 +91,7 @@ python3 manage.py runserver
   - Project Manager
   - Cloud Architect
   - Lead Developer
-- [@silascoleman](https://github.com/silascoleman) 
-  - Project Manager
 
 
 
 
-<!-- BEGIN_TF_DOCS -->
-## Requirements
-
-No requirements.
-
-## Providers
-
-No providers.
-
-## Modules
-
-No modules.
-
-## Resources
-
-No resources.
-
-## Inputs
-
-No inputs.
-
-## Outputs
-
-No outputs.
-<!-- END_TF_DOCS -->

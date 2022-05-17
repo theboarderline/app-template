@@ -1,4 +1,7 @@
-import UploadForm from './upload-form';
-import MemberForm from './member-form';
+import InputForm from './input-form';
+import InputBox from './input-box';
 
-export { UploadForm, MemberForm };
+export {
+  InputForm,
+  InputBox,
+};

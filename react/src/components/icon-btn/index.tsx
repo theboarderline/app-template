@@ -16,7 +16,7 @@ const IconButtonComponent: React.FC<IconButtonProps> = ({
   disabled,
   icon: Icon,
   onClick,
-  tooltipTitle
+  tooltipTitle,
 }) => {
   return (
     <Tooltip title={tooltipTitle}>
@@ -29,7 +29,7 @@ const IconButtonComponent: React.FC<IconButtonProps> = ({
 
 IconButtonComponent.defaultProps = {
   edge: false,
-  disabled: false
+  disabled: false,
 };
 
 export default IconButtonComponent;

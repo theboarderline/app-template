@@ -6,8 +6,10 @@ export LIFECYCLE_LETTER="${LIFECYCLE:0:1}"
 export GITHUB_ORG="theboarderline"
 export PROJ_IDENTIFIER='platform'
 
-export GKE_PROJECT="$LIFECYCLE_LETTER-$PROJ_IDENTIFIER-gke-project"
-export DB_PROJECT="$LIFECYCLE_LETTER-$PROJ_IDENTIFIER-db-project"
+# export GKE_PROJECT="$LIFECYCLE_LETTER-$PROJ_IDENTIFIER-gke-project"
+# export DB_PROJECT="$LIFECYCLE_LETTER-$PROJ_IDENTIFIER-db-project"
+export GKE_PROJECT="p-$PROJ_IDENTIFIER-gke-project"
+export DB_PROJECT="p-$PROJ_IDENTIFIER-db-project"
 export APP_PROJECT="$NAMESPACE-app-project"
 
 export CLUSTER="central-cluster"
