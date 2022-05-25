@@ -22,7 +22,7 @@ export const APP_CODE = check(window.APP_CODE)
 
 export const STATIC_BUCKET = check(window.STATIC_BUCKET)
   ? window.STATIC_BUCKET
-  : `dev-${APP_CODE}-v2-web-static'`
+  : `dev-${APP_CODE}-v2-web-static`
 
 export const GOOGLE_NUMBER = check(window.GOOGLE_NUMBER)
   ? window.GOOGLE_NUMBER
