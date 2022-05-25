@@ -8,13 +8,29 @@ export const check = (query?: string | number | null): boolean =>
   query !== 'null' &&
   query !== '';
 
+export const LIFECYCLE = check(window.LIFECYCLE)
+  ? window.LIFECYCLE
+  : 'local';
+
 export const CURRENT_URL = check(window.API_URL)
   ? window.API_URL
   : 'http://localhost:8000/';
 
 export const STATIC_BUCKET = check(window.STATIC_BUCKET)
   ? window.STATIC_BUCKET
-  : 'dev-tp2-web-static';
+  : `dev-${APP_CODE}-v2-web-static'`
+
+export const GOOGLE_NUMBER = check(window.GOOGLE_NUMBER)
+  ? window.GOOGLE_NUMBER
+  : '(123) 456-7890';
+
+export const APP_CODE = check(window.APP_CODE)
+  ? window.APP_CODE
+  : 'test';
+
+export const EPSAGON_TOKEN = check(window.EPSAGON_TOKEN)
+  ? window.EPSAGON_TOKEN
+  : '6a7c2c68-f9a6-45fa-a42f-4ab0a1469e80';
 
 export const getError = (data: any): string => {
   console.log('GETTING ERROR MSG:', data);
