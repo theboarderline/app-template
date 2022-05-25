@@ -1,7 +1,7 @@
 #!/bin/zsh
 
-if [[ ! $NAMESPACE ]]; then
-    echo "Must set NAMESPACE in bash env"
+if [[ ! $APP_CODE ]]; then
+    echo "Must set APP_CODE in bash env"
     exit 1
 fi
 

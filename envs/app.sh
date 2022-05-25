@@ -1,5 +1,5 @@
 
-export NAMESPACE=''
+export APP_CODE=''
 
 
 

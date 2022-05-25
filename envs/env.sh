@@ -10,7 +10,7 @@ export PROJ_IDENTIFIER='platform'
 # export DB_PROJECT="$LIFECYCLE_LETTER-$PROJ_IDENTIFIER-db-project"
 export GKE_PROJECT="p-$PROJ_IDENTIFIER-gke-project"
 export DB_PROJECT="p-$PROJ_IDENTIFIER-db-project"
-export APP_PROJECT="$NAMESPACE-app-project"
+export APP_PROJECT="$APP_CODE-app-project"
 
 export CLUSTER="central-cluster"
 
