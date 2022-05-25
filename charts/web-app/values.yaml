@@ -1,6 +1,5 @@
 web-app:
-  app_code: ""
-  domain: ""
+  enabled: true
   
 
 
