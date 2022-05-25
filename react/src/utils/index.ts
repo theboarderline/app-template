@@ -16,6 +16,10 @@ export const CURRENT_URL = check(window.API_URL)
   ? window.API_URL
   : 'http://localhost:8000/';
 
+export const APP_CODE = check(window.APP_CODE)
+  ? window.APP_CODE
+  : 'test';
+
 export const STATIC_BUCKET = check(window.STATIC_BUCKET)
   ? window.STATIC_BUCKET
   : `dev-${APP_CODE}-v2-web-static'`
@@ -23,10 +27,6 @@ export const STATIC_BUCKET = check(window.STATIC_BUCKET)
 export const GOOGLE_NUMBER = check(window.GOOGLE_NUMBER)
   ? window.GOOGLE_NUMBER
   : '(123) 456-7890';
-
-export const APP_CODE = check(window.APP_CODE)
-  ? window.APP_CODE
-  : 'test';
 
 export const EPSAGON_TOKEN = check(window.EPSAGON_TOKEN)
   ? window.EPSAGON_TOKEN
