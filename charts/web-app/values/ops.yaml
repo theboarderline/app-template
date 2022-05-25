@@ -1,5 +1,5 @@
 web-app:
-  lifecycle: ops
+  enabled: false
   api:
     tag: latest
   nginx:

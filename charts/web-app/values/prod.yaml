@@ -1,5 +1,5 @@
 web-app:
-  lifecycle: prod
+  enabled: false
   api:
     tag: latest
     use_pd: false
