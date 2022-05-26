@@ -8,7 +8,6 @@
 **/service-accounts/
 **/.DS_Store
 
-**/.argocd-source*
 envs/gcp.sh
 
 **/Chart.lock
