@@ -33,7 +33,7 @@ steps:
       - "-c"
       - |
         helm dep update ./charts/web-app
-        helm upgrade -i ${_NAMESPACE} ./charts/web-app -f ./charts/web-app/values/${_LIFECYCLE}.yaml -n ${_NAMESPACE} --create-namespace --set web-app.api.tag=$COMMIT_SHA --set web-app.nginx.tag=$COMMIT_SHA --set web-app.db_project_id=${_DB_PROJECT} --set web-app.app_code=${_APP_CODE} --set web-app.google.domain=${_DOMAIN}
+        helm upgrade -i ${_NAMESPACE} ./charts/web-app -f ./charts/web-app/values/${_LIFECYCLE}.yaml -n ${_NAMESPACE} --create-namespace --set web-app.lifecycle=${_LIFECYCLE} --set web-app.api.tag=$COMMIT_SHA --set web-app.nginx.tag=$COMMIT_SHA --set web-app.db_project_id=${_DB_PROJECT} --set web-app.app_code=${_APP_CODE} --set web-app.domain=${_DOMAIN}
     env:
       - "CLOUDSDK_COMPUTE_ZONE=${_ZONE}"
       - "CLOUDSDK_CONTAINER_CLUSTER=${_CLUSTER}"
