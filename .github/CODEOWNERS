@@ -8,10 +8,12 @@
 
 
 # Shell scripting
+/bin
 *.sh          @walkerobrien
 
 
 # CICD and Kubernetes configs
+/deploy       @walkerobrien
 *.yaml        @walkerobrien
 **/Dockerfile @walkerobrien
 
@@ -20,7 +22,7 @@
 *.py @walkerobrien
 *.go @walkerobrien
 
-/api @walkerobrien
+/src/api @walkerobrien
 
 
 # Frontend src code
@@ -28,7 +30,7 @@
 *.ts   @meredithkeesling @walkerobrien
 *.js   @meredithkeesling @walkerobrien
 
-/react @walkerobrien @meredithkeesling
+/src/react @walkerobrien @meredithkeesling
 
 
 
