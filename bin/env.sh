@@ -1,6 +1,15 @@
 
+export LIFECYCLE=$1
+
+if [[ $LIFECYCLE != "ops" && $LIFECYCLE != "dev" && $LIFECYCLE != "test" && $LIFECYCLE != "stage" && $LIFECYCLE != "prod" ]]; then
+    echo "Must set LIFECYCLE to ops/dev/test/stage/prod in bash env"
+    exit 1
+fi
+
+
 source ./envs/app.sh
 
+export NAMESPACE="$LIFECYCLE-$APP_CODE"
 export LIFECYCLE_LETTER="${LIFECYCLE:0:1}"
 
 export GITHUB_ORG="theboarderline"
