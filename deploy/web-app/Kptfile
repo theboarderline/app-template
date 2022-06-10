@@ -1,0 +1,18 @@
+apiVersion: kpt.dev/v1
+kind: Kptfile
+metadata:
+  name: web-app
+upstream:
+  type: git
+  git:
+    repo: https://github.com/theboarderline/app-template
+    directory: /deploy/web-app
+    ref: ops
+  updateStrategy: resource-merge
+upstreamLock:
+  type: git
+  git:
+    repo: https://github.com/theboarderline/app-template
+    directory: /deploy/web-app
+    ref: ops
+    commit: 42576e1827ea1fca84732f3cd0e106e66f6fa4d7
