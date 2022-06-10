@@ -29,8 +29,8 @@
 
 ### The following directories should only updated with Kpt
 
-`bin` - contains shell scripts to simplify local development (Update with Kpt)  
-`deploy/web-app` - contains web app Helm Chart for deploying to GKE (UPDATE with Kpt)  
+`bin` - contains shell scripts to simplify local development
+`deploy/web-app` - contains web app Helm Chart for deploying to GKE
 
 
 ### These directories/files are specific to the app and should be updated manually
