@@ -27,9 +27,9 @@
 
 ## 🎈 Contents <a name="contents"></a>
 
-### The following directories should only updated with Kpt
+### The following directories can be updated with Kpt using `kpt pkg update <PATH>`
 
-`bin` - contains shell scripts to simplify local development
+`bin`            - contains shell scripts to simplify local development
 `deploy/web-app` - contains web app Helm Chart for deploying to GKE
 
 
@@ -64,7 +64,7 @@ source ./bin/env.sh
 
 Run frontend server (or use [WebStorm by JetBrains](https://www.jetbrains.com/webstorm/) for simplified long-term development)
 ```
-cd react
+cd src/react
 yarn install
 yarn start
 ```
@@ -73,7 +73,7 @@ In a new shell, run backend server (or use [PyCharm by JetBrains](https://www.je
 
 ```
 # Initialize python virtual env
-cd api
+cd src/api
 python3 -m venv env
 source env/bin/activate
 pip3 install -r requirements.txt
@@ -90,9 +90,9 @@ python3 manage.py runserver
 
 - [Django Rest Framework](https://www.django-rest-framework.org/) - Python Rest API framework
 - [ReactJS](https://reactjs.org/) - Typescript Frontend library
+- [Google Cloud Platform](https://www.cloud.google.com/) - Public Cloud Provider
 - [GKE](https://cloud.google.com/kubernetes-engine) - Google Managed Kubernetes
 - [Helm](https://helm..sh/) - Kubernetes Package Manager
-- [Google Cloud Platform](https://www.cloud.google.com/) - Public Cloud Provider
 - [Cloud SQL](https://https://cloud.google.com/sql) - Google Managed Database
 - [Config Connector](https://cloud.google.com/config-connector/docs/overview) - Infrastructure Provisioning
 
