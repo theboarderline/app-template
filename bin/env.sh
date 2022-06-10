@@ -7,7 +7,7 @@ if [[ $LIFECYCLE != "ops" && $LIFECYCLE != "dev" && $LIFECYCLE != "test" && $LIF
 fi
 
 
-source ./envs/app.sh
+source ./app.sh
 
 export NAMESPACE="$LIFECYCLE-$APP_CODE"
 export LIFECYCLE_LETTER="${LIFECYCLE:0:1}"
