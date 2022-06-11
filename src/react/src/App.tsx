@@ -1,6 +1,6 @@
 import React from 'react';
 import epsagon from '@epsagon/web'
-import { LIFECYCLE, APP_CODE, EPSAGON_TOKEN } from './utils/index.ts';
+import { LIFECYCLE, APP_CODE, EPSAGON_TOKEN } from './utils';
 import BaseRouter from './utils/router';
 import { Layout } from './components';
 import './style/main.scss';
