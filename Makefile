@@ -1,6 +1,10 @@
 
 all: install
 
+update:
+	kpt pkg update bin
+	kpt pkg update deploy/web-app
+
 dep:
 	helm dep update ./deploy/web-app
 
