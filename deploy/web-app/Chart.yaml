@@ -3,5 +3,5 @@ name: web-app
 version: 0.0.1
 dependencies:
   - name: web-app
-    version: 0.3.26
+    version: 0.3.27
     repository: https://theboarderline.github.io/helm-charts
