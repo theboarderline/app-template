@@ -7,7 +7,7 @@ chardet==4.0.0
 charset-normalizer==2.0.6
 cryptography==35.0.0
 defusedxml==0.7.1
-Django==3.1.14
+Django==3.2.15
 django-allauth==0.44.0
 django-cors-headers==3.10.0
 django-filter==21.1
@@ -39,12 +39,12 @@ packaging==21.0
 phonenumbers==8.12.34
 Pillow==9.0.1
 proto-plus==1.19.4
-protobuf==3.18.1
+protobuf==3.18.3
 psycopg2-binary==2.9.1
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
 pycparser==2.20
-PyJWT==1.7.1
+PyJWT==2.4.0
 pyparsing==2.4.7
 python-http-client==3.3.3
 python3-openid==3.2.0
