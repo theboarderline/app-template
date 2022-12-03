@@ -3116,10 +3116,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-16.4.13.tgz#7dfd9c14661edc65cccd43a29eb454174642370d"
   integrity sha512-bLL69sKtd25w7p1nvg9pigE4gtKVpGTPojBFLMkGHXuUgap2sLqQt2qUnqmVCDfzGUL0DRNZP+1prIZJbMeAXg==
 
-"@types/node@^12.20.10":
-  version "12.20.19"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.20.19.tgz#538e61fc220f77ae4a4663c3d8c3cb391365c209"
-  integrity sha512-niAuZrwrjKck4+XhoCw6AAVQBENHftpXw9F4ryk66fTgYaKQ53R4FI7c9vUGGw5vQis1HKBHDR1gcYI/Bq1xvw==
+"@types/node@^12.20.55":
+  version "12.20.55"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.20.55.tgz#c329cbd434c42164f846b909bd6f85b5537f6240"
+  integrity sha512-J8xLz7q2OFulZ2cyGTLE1TbbZcjpno7FaN6zdJNrgAdrJ+DZzh/uFR6YrTb4C+nXakvud8Q4+rbhoIWlYQbUFQ==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.1"
@@ -3194,7 +3194,7 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^17.0.3":
+"@types/react@*":
   version "17.0.16"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.16.tgz#056f40c45645761527baeb7d89d842a6abdf285a"
   integrity sha512-3kCUiOOlQTwUUvjNFkbBTWMTxdTGybz/PfjCw9JmaRGcEDBQh+nGMg7/E9P2rklhJuYVd25IYLNcvqgSPCPksg==
@@ -3396,6 +3396,7 @@
   dependencies:
     "@typescript-eslint/typescript-estree" "5.45.0"
     "@typescript-eslint/utils" "5.45.0"
+
     debug "^4.3.4"
     tsutils "^3.21.0"
 
@@ -4004,12 +4005,13 @@ axe-core@^4.4.3:
   resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-4.5.2.tgz#823fdf491ff717ac3c58a52631d4206930c1d9f7"
   integrity sha512-u2MVsXfew5HBvjsczCv+xlwdNnB1oQR9HlAcsejZttNjKKSkeDNVwB1vMThIUIFI9GoT57Vtk8iQLwqOfAkboA==
 
-axios@^0.21.2:
-  version "0.21.2"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.2.tgz#21297d5084b2aeeb422f5d38e7be4fbb82239017"
-  integrity sha512-87otirqUw3e8CzHTMO+/9kh/FSgXt/eVDvipijwDtEuwbkySWZ9SBm6VEubmJ/kLKEoLQV/POhxXFb66bfekfg==
+axios@^0.27.2:
+  version "0.27.2"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.27.2.tgz#207658cc8621606e586c85db4b41a750e756d972"
+  integrity sha512-t+yRIyySRTp/wua5xEr+z1q60QmLq8ABsS5O9Me1AsE5dfKqgnCFzwiCZZ/cGNd1lq4/7akDWMxdhVlucjmnOQ==
   dependencies:
-    follow-redirects "^1.14.0"
+    follow-redirects "^1.14.9"
+    form-data "^4.0.0"
 
 axobject-query@^2.2.0:
   version "2.2.0"
@@ -6119,6 +6121,15 @@ form-data@^3.0.0:
     combined-stream "^1.0.8"
     mime-types "^2.1.12"
 
+form-data@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/form-data/-/form-data-4.0.0.tgz#93919daeaf361ee529584b9b31664dc12c9fa452"
+  integrity sha512-ETEklSGi5t0QMZuiXoA/Q6vcnxcLQP5vdugSpuAyi6SVGi2clPPp+xgEhuMaHC+zGgn31Kd235W35f7Hykkaww==
+  dependencies:
+    asynckit "^0.4.0"
+    combined-stream "^1.0.8"
+    mime-types "^2.1.12"
+
 form-data@~2.3.2:
   version "2.3.3"
   resolved "https://registry.yarnpkg.com/form-data/-/form-data-2.3.3.tgz#dcce52c05f644f298c6a7ab936bd724ceffbf3a6"
@@ -7533,7 +7544,8 @@ jest-watch-typeahead@^1.0.0:
   resolved "https://registry.yarnpkg.com/jest-watch-typeahead/-/jest-watch-typeahead-1.1.0.tgz#b4a6826dfb9c9420da2f7bc900de59dad11266a9"
   integrity sha512-Va5nLSJTN7YFtC2jd+7wsoe1pNe5K4ShLux/E5iHEwlB9AxaxmggY7to9KUqKojhaJw3aXqt5WAb4jGPOolpEw==
   dependencies:
-    ansi-escapes "^4.3.1"
+    "@jest/types" "^27.5.1"
+    camelcase "^6.2.0"
     chalk "^4.0.0"
     jest-regex-util "^28.0.0"
     jest-watcher "^28.0.0"
@@ -9680,10 +9692,10 @@ react-loader-spinner@^4.0.0:
   dependencies:
     prop-types "^15.7.2"
 
-react-material-ui-carousel@^2.2.6:
-  version "2.2.7"
-  resolved "https://registry.yarnpkg.com/react-material-ui-carousel/-/react-material-ui-carousel-2.2.7.tgz#2f2721310a90870df2a3e6f8543f1fd4e70800b7"
-  integrity sha512-aO42C4oupmIxmJwYaTWrlWaXvVVspKcpEu/5efZ9slteATEsqqPtNAeVaE40Vimw2hZeIh2e8vpRwjq7fSsLxw==
+react-material-ui-carousel@^2.3.11:
+  version "2.3.11"
+  resolved "https://registry.yarnpkg.com/react-material-ui-carousel/-/react-material-ui-carousel-2.3.11.tgz#0523d4a97caa2fd7d21d803e165b9f3120fe7693"
+  integrity sha512-rsD9D2JLDBTfinaPy1+hcb7gunfdX7jmga7xESfRCCtLXzokOrkhmx4qMd8dZmYY42zc/HbYqLqg9E/d187lbw==
   dependencies:
     auto-bind "^2.1.1"
     react-swipeable "^6.1.0"
