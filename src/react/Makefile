@@ -1,23 +1,28 @@
 
-APP_NAME ?= rambler-frontend
+APP_NAME ?= sample-frontend
 
-all: install run
+all: install test run
+
+reset: clean install
 
 install:
 	yarn install
 
-run:
-	yarn start
-
 test:
 	npx playwright test
+
+build-dev:
+	yarn build
+
+run:
+	yarn start
 
 to:
 	npx playwright test --ui
 
 clean:
-	rm -rf node_modules
-	docker rmi ${APP_NAME}
+	rm -rf node_modules yarn.lock
+	docker rmi ${APP_NAME} || true
 
 image:
 	docker build . -t ${APP_NAME}
