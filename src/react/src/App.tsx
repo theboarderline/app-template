@@ -1,35 +1,43 @@
 import React from 'react';
-import epsagon from '@epsagon/web'
-import { LIFECYCLE, APP_CODE, EPSAGON_TOKEN } from './utils';
+import LogRocket from 'logrocket';
+
+import 'primeicons/primeicons.css'
+import 'primereact/resources/themes/lara-light-indigo/theme.css'
+import 'primereact/resources/primereact.min.css'
+
 import BaseRouter from './utils/router';
 import { Layout } from './components';
 import './style/main.scss';
+import {LIFECYCLE} from "./utils";
+import {useRouteChangeHandler} from "./hooks/history";
 
 
-epsagon.init({
-  token: EPSAGON_TOKEN,
-  appName: `${LIFECYCLE}-${APP_CODE}`,
-})
+console.log('LIFECYCLE:', LIFECYCLE)
+if (LIFECYCLE === 'prod')
+  LogRocket.init('n0phks/prod-boatload')
+
 
 declare global {
   interface Window {
     LIFECYCLE: string,
     API_URL: string;
-    AUTH_DOMAIN: string;
-    FIREBASE_KEY: string;
     APP_CODE: string;
-    EPSAGON_TOKEN: string;
-    STATIC_BUCKET: string;
-    GOOGLE_NUMBER?: string,
+    PUBLIC_BUCKET: string;
+    BACKEND_BUCKET: string;
+    GOOGLE_MAPS_KEY: string;
   }
 }
 
-const App: React.FC = () => (
+const App: React.FC = () => {
+  useRouteChangeHandler()
+
+return (
   <div className='lake-games'>
-    <Layout>
-      <BaseRouter />
-    </Layout>
-  </div>
-);
+      <Layout>
+        <BaseRouter />
+      </Layout>
+    </div>
+  )
+}
 
 export default App;

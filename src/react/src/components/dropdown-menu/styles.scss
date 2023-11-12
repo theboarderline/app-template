@@ -1,21 +1,21 @@
 @import '../../style/abstracts/_abstracts-dir';
 
-.lg-dropdown {
+.cgs-dropdown {
   width: 100%;
 
-  .lg-dropdown--label {
+  .cgs-dropdown--label {
     @include setFont($font-size--md, $font-weight--regular);
   }
 
-  .lg-dropdown--outlined {
+  .cgs-dropdown--outlined {
     @include setFont($font-size--md, $font-weight--regular);
   }
 }
 
-.lg-dropdown--menu {
-  .lg-dropdown--paper {
-    .lg-dropdown--list {
-      .lg-dropdown--item {
+.cgs-dropdown--menu {
+  .cgs-dropdown--paper {
+    .cgs-dropdown--list {
+      .cgs-dropdown--item {
         @include setFont($font-size--md, $font-weight--regular);
       }
     }

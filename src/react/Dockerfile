@@ -1,17 +1,19 @@
-# Use yarn image to compile React app
-FROM gcr.io/cloud-builders/yarn as build
+FROM node:18-bullseye-slim as build
+
 WORKDIR /react
+
+COPY package.json yarn.lock ./
+
+RUN yarn install
+
 COPY . .
 
-RUN yarn global add sass
-RUN yarn install
 RUN yarn build
 
 
-# Use custom nginx image with built-in configs to serve compiled React app
-FROM gcr.io/walker-cpl/nginx-react:0.0.8
+# Build custom nginx image with to serve compiled React app
+FROM gcr.io/walker-cpl/nginx-react:0.1.3
 
 COPY --from=build /react/build/ /var/www/html/
-
 
 

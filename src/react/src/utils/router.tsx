@@ -1,22 +1,30 @@
-import React from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import React from 'react'
+import { Switch, Route, Redirect } from 'react-router-dom'
+import { useAuth } from '../state-management'
 import {
-  Login,
   Home,
-} from '../pages';
+  Users,
+} from '../pages'
 
 interface PrivateRouteProps {
-  component: any;
-  path: string;
+  component: any
+  path: string
+}
+
+interface RefreshableRouteProps {
+  component: any
+  path: string
+  private?: boolean
 }
 
 const PrivateRoute: React.FC<PrivateRouteProps> = ({
-  component: Component,
-  path,
-}) => {
-
-  const isAuth = false // state.isAuthenticated;
-
+     component: Component,
+     path,
+   }) => {
+  const { state } = useAuth()
+  
+  const isAuth = state.isAuthenticated
+  
   return (
     <Route
       render={(props) =>
@@ -32,17 +40,65 @@ const PrivateRoute: React.FC<PrivateRouteProps> = ({
         )
       }
     />
-  );
-};
+  )
+}
 
-const BaseRouter = (): JSX.Element => (
-  <Switch>
-    <Route exact path='/' component={Home} />
-    <Route path='/home' component={Home} />
-    <Route path='/login' component={Login} />
+const RefreshableRoute: React.FC<RefreshableRouteProps> = ({
+     private: isPrivate,
+     component: Component,
+     path,
+   }) => {
+  
+  const [lastPath, setLastPath] = React.useState<string>('')
+  
+  const { state } = useAuth()
 
-    {/* <PrivateRoute path='/private' component={PrivateComponent} /> */}
-  </Switch>
-);
+  const noRefreshPaths = ['/login', '/signup']
+  
+  React.useEffect(() => {
+    const lastPath = localStorage.getItem('lastPath') || '/home'
+    if (lastPath && !noRefreshPaths.find((path) => path === lastPath))
+      setLastPath(lastPath)
+  }, [])
+  
+  if (isPrivate)
+    return (
+      <PrivateRoute
+        component={Component}
+        path={path}
+      />
+    )
+  
+  return (
+    <Route
+      render={() => {
+        return state.isAuthenticated ? <Redirect to={lastPath} /> : <Redirect to="/login" />;
+      }}
+    />
+  )
+    
+    // return (
+    //   <Route
+    //     path="/"
+    //     render={() => {
+    //       const lastPath = localStorage.getItem('lastPath') || '/home';
+    //       return state.isAuthenticated ? <Redirect to={lastPath} /> : <Redirect to="/login" />;
+    //     }}
+    //   />
+    // )
 
-export default BaseRouter;
+}
+
+const BaseRouter: React.FC = () => {
+  return (
+    <Switch>
+      <Route path='/home' component={Home} />
+      <PrivateRoute path='/users' component={Users} />
+      
+      <Route path='/' component={Home} />
+      
+    </Switch>
+  )
+}
+
+export default BaseRouter

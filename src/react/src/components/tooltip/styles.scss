@@ -1,7 +1,0 @@
-@import '../../style/abstracts/_abstracts-dir';
-
-.lake-games--popper {
-  .lake-games--tooltip {
-    @include setFont($font-size--md, $font-weight--regular);
-  }
-}

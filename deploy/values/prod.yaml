@@ -1,9 +1,0 @@
-web-app:
-  enabled: false
-  api:
-    tag: latest
-    use_pd: false
-  nginx:
-    tag: latest
-  db:
-    proxy: false

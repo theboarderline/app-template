@@ -11,23 +11,23 @@ interface DateFieldProps {
 const DateFieldComponent: React.FC<DateFieldProps> = ({
   label,
   required,
-  setValue,
+  setValue
 }) => {
   return (
     <>
       <InputLabel htmlFor={label}>
-        {label}: {required ? <strong className='red-mark'>*</strong> : null}
+        {label}: {required ? <strong className="red-mark">*</strong> : null}
       </InputLabel>
       <TextField
         id={label}
-        type='date'
+        type="date"
         onChange={(e) => setValue(e.target.value)}
         inputProps={{
-          className: 'font',
+          className: 'font'
         }}
         InputLabelProps={{
           shrink: true,
-          className: 'font',
+          className: 'font'
         }}
       />
     </>

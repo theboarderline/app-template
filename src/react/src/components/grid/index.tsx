@@ -50,7 +50,7 @@ const Grid: React.FC<GridProps> = ({ width, items }) => {
   };
 
   return (
-    <GridList cols={12} className='lake-games--grid' cellHeight='auto'>
+    <GridList cols={12} className="lake-games--grid" cellHeight="auto">
       {items.map(({ cols, rows, id, content }) => (
         <GridListTile
           cols={getGridListCols(cols)}

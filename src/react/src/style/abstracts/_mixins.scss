@@ -1,29 +1,29 @@
 @mixin respond-to($breakpoint) {
-  @if $breakpoint == 'xs' {
+  @if $breakpoint == "xs" {
     @media (max-width: 576px) {
       @content;
     }
   }
 
-  @else if $breakpoint == 'sm' {
+  @else if $breakpoint == "sm" {
     @media (min-width: 768px) {
       @content;
     }
   }
 
-  @else if $breakpoint == 'md' {
+  @else if $breakpoint == "md" {
     @media (min-width: 992px) {
       @content;
     }
   }
 
-  @else if $breakpoint == 'lg' {
+  @else if $breakpoint == "lg" {
     @media (min-width: 1200px) {
       @content;
     }
   }
 
-  @else if $breakpoint == 'xl' {
+  @else if $breakpoint == "xl" {
     @media (min-width: 1400px) {
       @content;
     }

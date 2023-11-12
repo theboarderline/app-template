@@ -13,7 +13,6 @@
 
 
 # CICD and Kubernetes configs
-/deploy       @walkerobrien
 *.yaml        @walkerobrien
 **/Dockerfile @walkerobrien
 
@@ -26,12 +25,11 @@
 
 
 # Frontend src code
-*.scss @meredithkeesling @walkerobrien
-*.ts   @meredithkeesling @walkerobrien
-*.js   @meredithkeesling @walkerobrien
+*.scss @walkerobrien
+*.ts   @walkerobrien
+*.js   @walkerobrien
 
-/src/react @walkerobrien @meredithkeesling
-
-
+/src/react @walkerobrien
+/src/api   @walkerobrien
 
 

@@ -1,11 +1,2 @@
 @import '../../style/abstracts/_abstracts-dir';
 
-.lake-games {
-  background-color: setSlateGrayOpacity(0.3);
-  height: 100%;
-
-  .lake-games--layout {
-    height: calc(100vh - 64px);
-    // padding: 32px;
-  }
-}

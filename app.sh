@@ -1,5 +1,6 @@
 
-export APP_CODE=''
-export DOMAIN=''
+export APP_CODE='lakegames'
+export DOMAIN='lakegames.us'
+
 
 

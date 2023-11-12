@@ -1,0 +1,16 @@
+@import '../../style/abstracts/_abstracts-dir';
+
+.lg--header-menu {
+  .lg--header-menu-paper {
+    .lg--header-menu-list {
+      a {
+        color: $xiketic;
+        text-decoration: none;
+      }
+
+      .lg--header-menu-list-item {
+        @include setFont($font-size--md, $font-weight--regular);
+      }
+    }
+  }
+}

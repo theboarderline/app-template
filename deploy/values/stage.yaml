@@ -1,6 +1,0 @@
-web-app:
-  enabled: false
-  api:
-    tag: latest
-  nginx:
-    tag: latest

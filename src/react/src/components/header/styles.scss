@@ -1,8 +1,112 @@
 @import '../../style/abstracts/_abstracts-dir';
 
-.lake-games--header {
-  &.lake-games--header-primary {
-    color: $xiketic;
-    background-color: setPewterBlueOpacity(0.5);
+
+.header {
+
+  &__toolbar {
+    align-items: center;
+    min-height: 80px;
+  }
+
+  &__logo {
+    margin-top: 6px;
+    color: black;
+    text-decoration: none;
+    margin-right: auto;
+    margin-left: 10px;
+  }
+
+}
+
+.block {
+  display: block !important;
+}
+
+.float__left {
+  float: left !important;
+}
+
+.margin-right-10 {
+  margin-right: 10px !important;
+}
+
+@import '../../style/abstracts/_abstracts-dir';
+
+.lg-home {
+  padding: 16px;
+
+  .lg-home--actions {
+    background-color: #D3D8DC;
+    z-index: 1099;
+    box-shadow: none;
+    position: absolute !important;
+    margin-top: 80px !important;
+
+    .lg-home--toolbar {
+      display: flex;
+      flex-direction: row-reverse;
+      height: 72px;
+    }
+  }
+
+  .lg-home--posts {
+    margin-top: 30px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.MuiCard-root {
+  border: 1px solid gray !important;
+  background: #ececef !important;
+  border-radius: 12px !important;
+}
+
+.MuiCardMedia-root.MuiCardMedia-media {
+  max-height: 450px;
+}
+
+@media only screen and (min-width: 770px) and (max-width: 1000px) {
+  .lg-home--posts {
+    width: 75% !important;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 770px) {
+  .lg-home--posts {
+    width: 85% !important;
+  }
+}
+@media only screen and (min-width: 500px) and (max-width: 600px) {
+  .lg-home--posts {
+    width: 90% !important;
+  }
+}
+
+@media only screen and (min-width: 200px) and  (max-width: 500px) {
+  .lg-home--posts {
+    width: 100% !important;
+  }
+}
+
+.MuiCardHeader-action{
+  display: contents;
+}
+
+@media only screen and (min-width: 1100px) {
+  .header__large {
+    display: block !important;
+  }
+  .header__small {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 1101px) {
+  .header__small {
+    display: block !important;
+  }
+  .header__large {
+    display: none !important;
   }
 }

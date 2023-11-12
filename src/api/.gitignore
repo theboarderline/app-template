@@ -1,0 +1,12 @@
+
+**/.idea
+**/main
+**/sample-api
+
+**/.env
+
+**/*.sqlite
+
+**/cov
+**/coverage.out
+**/coverprofile.out

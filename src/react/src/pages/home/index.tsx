@@ -1,16 +1,33 @@
 import * as React from 'react';
 import { RouteComponentProps, withRouter } from 'react-router-dom';
-import { AppBar, Toolbar } from '@material-ui/core';
-import { InputForm } from '../../forms';
+import { Accordion, AccordionTab } from 'primereact/accordion';
+import {Container} from '@material-ui/core';
+import { Card } from 'primereact/card';
+
 import './styles.scss';
+import {Footer, HomeHeader} from "../../components";
+
 
 const Home: React.FC<RouteComponentProps> = () => {
-
   return (
-    <div className='lg-home'>
-      <InputForm />
-    </div>
-  );
+    <Container>
+      <HomeHeader/>
+        <Card>
+          <div className='lg-home'>
+          <Accordion multiple>
+            <AccordionTab header="Goal"></AccordionTab>
+            
+            <AccordionTab header="Services"></AccordionTab>
+            
+            <AccordionTab header="Process"></AccordionTab>
+          </Accordion>
+          </div>
+        </Card>
+      <Footer/>
+    </Container>
+  )
 };
 
 export default withRouter(Home);
+
+

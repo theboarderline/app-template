@@ -15,4 +15,4 @@ upstreamLock:
     repo: https://github.com/theboarderline/app-template
     directory: /bin
     ref: main
-    commit: 42576e1827ea1fca84732f3cd0e106e66f6fa4d7
+    commit: 38d743066385d75cb349be7cc0dd5cbf68a2207c
