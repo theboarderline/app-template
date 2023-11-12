@@ -32,10 +32,6 @@ export const STATIC_BUCKET = check(window.PUBLIC_BUCKET)
   ? window.PUBLIC_BUCKET
   : `dev-${APP_CODE}-v3-public-content`
 
-export const GOOGLE_MAPS_KEY = check(window.GOOGLE_MAPS_KEY)
-  ? window.GOOGLE_MAPS_KEY
-  : 'AIzaSyBi8c_FjiOPkerecsw2u4hmqjuIhwNQJQM';
-
 export const upperCaseFirst = (s: string) => {
   return s.charAt(0).toUpperCase() + s.slice(1);
 }
