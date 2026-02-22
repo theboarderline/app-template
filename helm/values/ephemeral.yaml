@@ -1,0 +1,10 @@
+api:
+  replicas: 1
+  autoscaler:
+    enabled: false
+
+nginx:
+  replicas: 1
+
+autoscaler:
+  enabled: false

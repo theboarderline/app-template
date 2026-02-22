@@ -1,28 +1,50 @@
-name: Playwright Tests
+name: Dev Integration Tests
+
 on:
+  workflow_dispatch:
   pull_request:
-    branches: [main]
+    paths:
+      - src/react/**
+    branches:
+      - dev
+      - ops
+
 jobs:
-  test:
-    timeout-minutes: 60
+  build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: src/react
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
         with:
-          node-version: 18
-      - name: Install dependencies
-        run: npm install -g yarn && yarn
-      - name: Install Playwright Browsers
-        run: yarn playwright install --with-deps
-      - name: Run Playwright tests
-        run: yarn playwright test
-      - uses: actions/upload-artifact@v3
-        if: always()
+          node-version: '18'
+          cache: 'yarn'
+          cache-dependency-path: src/react/yarn.lock
+
+      - name: Install and verify build
+        working-directory: src/react
+        run: yarn install && yarn build
+
+  e2e:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
         with:
-          name: playwright-report
-          path: playwright-report/
-          retention-days: 30
+          node-version: '18'
+          cache: 'yarn'
+          cache-dependency-path: src/react/yarn.lock
+
+      - name: E2E Tests
+        uses: cypress-io/github-action@v6.0.0
+        with:
+          working-directory: src/react
+          install-command: yarn install
+          start: yarn start
+          browser: chrome
+          spec: cypress/e2e/*
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

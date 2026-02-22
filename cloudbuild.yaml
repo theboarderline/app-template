@@ -1,0 +1,55 @@
+substitutions:
+  _HELM_VERSION: '0.4.36'
+  _REGION: 'us-central1-a'
+  _CLUSTER: 'central-cluster'
+
+steps:
+  - name: gcr.io/cloud-builders/docker:latest
+    entrypoint: bash
+    args:
+      - '-c'
+      - |
+        docker pull us-central1-docker.pkg.dev/$PROJECT_ID/${_LIFECYCLE}-${_APP_CODE}-v3-images/api:latest || true
+        DOCKER_BUILDKIT=1 docker build \
+          --cache-from us-central1-docker.pkg.dev/$PROJECT_ID/${_LIFECYCLE}-${_APP_CODE}-v3-images/api:latest \
+          -t us-central1-docker.pkg.dev/$PROJECT_ID/${_LIFECYCLE}-${_APP_CODE}-v3-images/api:$COMMIT_SHA \
+          -t us-central1-docker.pkg.dev/$PROJECT_ID/${_LIFECYCLE}-${_APP_CODE}-v3-images/api:latest \
+          ./src/api
+    id: Build-api
+
+  - name: gcr.io/cloud-builders/docker:latest
+    entrypoint: bash
+    args:
+      - '-c'
+      - |
+        docker pull us-central1-docker.pkg.dev/$PROJECT_ID/${_LIFECYCLE}-${_APP_CODE}-v3-images/react:latest || true
+        DOCKER_BUILDKIT=1 docker build \
+          --cache-from us-central1-docker.pkg.dev/$PROJECT_ID/${_LIFECYCLE}-${_APP_CODE}-v3-images/react:latest \
+          -t us-central1-docker.pkg.dev/$PROJECT_ID/${_LIFECYCLE}-${_APP_CODE}-v3-images/react:$COMMIT_SHA \
+          -t us-central1-docker.pkg.dev/$PROJECT_ID/${_LIFECYCLE}-${_APP_CODE}-v3-images/react:latest \
+          ./src/react
+    id: Build-react
+
+  - name: gcr.io/walker-cpl/helm-cd:0.0.10
+    args:
+      - ${_CLUSTER}
+      - ${_REGION}
+      - ${_GKE_PROJECT}
+      - ${_LIFECYCLE}-${_APP_CODE}
+      - ${_HELM_VERSION}
+      - $COMMIT_SHA
+      - 'false'
+    id: Update-Images
+    waitFor: ['Build-api', 'Build-react']
+
+timeout: 1800s
+
+images:
+  - 'us-central1-docker.pkg.dev/$PROJECT_ID/${_LIFECYCLE}-${_APP_CODE}-v3-images/react:latest'
+  - 'us-central1-docker.pkg.dev/$PROJECT_ID/${_LIFECYCLE}-${_APP_CODE}-v3-images/react:$COMMIT_SHA'
+  - 'us-central1-docker.pkg.dev/$PROJECT_ID/${_LIFECYCLE}-${_APP_CODE}-v3-images/api:latest'
+  - 'us-central1-docker.pkg.dev/$PROJECT_ID/${_LIFECYCLE}-${_APP_CODE}-v3-images/api:$COMMIT_SHA'
+
+options:
+  machineType: E2_HIGHCPU_32
+  logging: LEGACY

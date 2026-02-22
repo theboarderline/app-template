@@ -1,0 +1,36 @@
+---
+autoscaler:
+  enabled: true
+
+api:
+  replicas: 1
+  memory:
+    request: 128Mi
+    limit: 1Gi
+
+domain: your-domain.com
+
+google:
+  gke_project: d-platform-gke-project-hsw
+
+jwt:
+  enabled: true
+
+postgres:
+  enabled: false
+
+cronjobs:
+  enabled: false
+
+django:
+  enabled: true
+
+external_secrets:
+  enabled: true
+  extra_keys: []
+
+fqdn_network_policy:
+  enabled: false
+
+linkerd:
+  enabled: false
