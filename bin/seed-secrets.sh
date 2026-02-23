@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Seeds GCP Secret Manager with lifecycle-scoped secrets copied from a source lifecycle.
 # The chart's ExternalSecret references fixed key names (django-key, openai-key, etc.).

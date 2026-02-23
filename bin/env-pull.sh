@@ -38,6 +38,13 @@ for SECRET_NAME in $(echo "${!PULL_MAP[@]}" | tr ' ' '\n' | sort); do
     --secret="$SECRET_NAME" \
     --project="$APP_PROJECT" 2>/dev/null || true)
 
+  if [[ -z "$VALUE" && "$SECRET_NAME" == "secret-key" ]]; then
+    VALUE=$(gcloud secrets versions access latest \
+      --secret="django-key" \
+      --project="$APP_PROJECT" 2>/dev/null || true)
+    [[ -n "$VALUE" ]] && echo -e "  ${YELLOW}FALLBACK${NC}  ${SECRET_NAME} — using django-key"
+  fi
+
   if [[ -z "$VALUE" ]]; then
     echo -e "  ${YELLOW}SKIP${NC}  ${SECRET_NAME} — not found in Secret Manager"
     continue

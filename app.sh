@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 export APP_CODE='your-app'
 export APP_PROJECT="${APP_CODE}-app-project"
@@ -6,6 +6,10 @@ export DOMAIN='your-domain.com'
 
 export DEV_GKE_PROJECT="d-platform-gke-project-hsw"
 export PROD_GKE_PROJECT="p-platform-gke-project-qjo"
+
+export DNS_PROJECT="tbl-dns-project"
+export DNS_CLUSTER_NAME="central-cluster"
+export DNS_CLUSTER_ZONE="us-central1-a"
 
 export JIRA_KEY="abc"
 

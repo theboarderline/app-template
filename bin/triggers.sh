@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 set -e
 
@@ -62,6 +62,11 @@ case "$ACTION" in
     echo -e "  GKE project:  ${GKE_PROJECT}"
     echo ""
 
+    if gcloud builds triggers describe "${NAME}" --project="${APP_PROJECT}" &>/dev/null; then
+      echo -e "  ${YELLOW}Already exists — skipping${NC}"
+      exit 0
+    fi
+
     gcloud builds triggers create github \
       --project="${APP_PROJECT}" \
       --name="${NAME}" \
@@ -111,6 +116,12 @@ case "$ACTION" in
     echo -e "  Branch pattern: (?i)${JIRA_KEY}-[0-9]+"
     echo -e "  Build config:   cloudbuild-ephemeral.yaml"
     echo ""
+
+    if gcloud builds triggers describe "${NAME}" --project="${APP_PROJECT}" &>/dev/null; then
+      echo -e "  ${YELLOW}Already exists — skipping${NC}"
+      exit 0
+    fi
+
     gcloud builds triggers create github \
       --project="${APP_PROJECT}" \
       --name="${NAME}" \

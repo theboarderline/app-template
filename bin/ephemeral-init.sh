@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Bootstraps an ephemeral environment from a branch name.
 # Idempotent — safe to run multiple times.

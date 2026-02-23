@@ -19,6 +19,8 @@ steps:
           -t $$REG/api:$COMMIT_SHA \
           -t $$REG/api:latest \
           ./src/api
+        docker push $$REG/api:$COMMIT_SHA
+        docker push $$REG/api:latest
     id: Build-api
 
   - name: gcr.io/cloud-builders/docker:latest
@@ -34,6 +36,8 @@ steps:
           -t $$REG/react:$COMMIT_SHA \
           -t $$REG/react:latest \
           ./src/react
+        docker push $$REG/react:$COMMIT_SHA
+        docker push $$REG/react:latest
     id: Build-react
 
   - name: gcr.io/walker-cpl/helm-cd:0.0.10

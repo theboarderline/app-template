@@ -113,6 +113,8 @@ if [[ "$LIFECYCLE" == "prod" ]]; then
     echo -e "${YELLOW}Aborted${NC}"
     exit 1
   fi
+elif [[ ! -t 0 ]]; then
+  echo -e "${DIM}Non-interactive — auto-confirming${NC}"
 else
   echo -n -e "Push ${TOTAL_UPDATES} secret(s) to Secret Manager? [y/N] "
   read -r CONFIRM

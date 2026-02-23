@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Destroys an ephemeral environment and cleans up all associated resources.
 #

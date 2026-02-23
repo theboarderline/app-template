@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 if [[ ! $APP_CODE ]]; then
     echo "Must set APP_CODE in bash env"

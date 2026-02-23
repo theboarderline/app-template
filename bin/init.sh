@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Bootstraps a lifecycle from scratch:
 #   1. Connect to cluster

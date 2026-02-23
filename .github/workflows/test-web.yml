@@ -1,0 +1,26 @@
+name: Test Web
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - src/react/**
+    branches:
+      - dev
+      - ops
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'yarn'
+          cache-dependency-path: src/react/yarn.lock
+
+      - name: Install and verify build
+        working-directory: src/react
+        run: yarn install && yarn build

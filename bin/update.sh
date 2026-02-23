@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 CLUSTER_NAME=$1
 LOCATION=$2
