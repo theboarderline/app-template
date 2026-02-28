@@ -33,7 +33,7 @@ case "$ACTION" in
     echo -e "${BLUE}${BOLD}Helm upgrade [${RELEASE_NAME}] v${HELM_VERSION}${NC}"
     helm repo add tbl-charts https://theboarderline.github.io/helm-charts 2>/dev/null || true
     helm repo update 2>/dev/null || true
-    helm upgrade --install --disable-openapi-validation \
+    helm upgrade --install --disable-openapi-validation --create-namespace \
       -f "${DIR}/../helm/values/values.yaml" \
       -f "${DIR}/../helm/values/${LIFECYCLE}.yaml" \
       --set app_code="${APP_CODE}" \
